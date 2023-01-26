@@ -1,0 +1,552 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Math from "../components/Math";
+import InlineMath from "../components/InlineMath";
+import GivenList from "../components/GivenList";
+---
+
+<Layout
+  title="Investigating the effect that the mass of salt in water has on its specific heat capacity"
+>
+  <main>
+    <h1 class="text-center underline font-bold my-5">
+      Investigating the effect that the mass of salt in water has on its
+      specific heat capacity
+    </h1>
+    <h2>Research question</h2>
+    <p>
+      After an experiment in class, I found I was keen to explore the concept of
+      specific heat capacity further. I thought that the link between the mass
+      of salt dissolved in water and specific heat capacity would be interesting
+      to investigate. Hence, my research question is:
+    </p>
+    <p class="italic font-bold">
+      How does the mass of salt dissolved in water affect the specific heat
+      capacity of the solution?
+    </p>
+    <h2>Theory</h2>
+    <p>
+      The specific heat capacity is a constant value existing for each unique
+      material. It is defined by the amount of energy it takes to heat 1
+      kilogram of that material by 1 kelvin. To calculate the specific heat
+      capacity, one must measure the amount of thermal energy transferred into
+      or out of a material of known mass. Often, this value is used to calculate
+      the amount of energy required to change a material's temperature:
+    </p>
+    <h3>Equation 1</h3>
+    <Math
+      latex={String.raw`Q=mc \Delta T`}
+      whereList={[
+        {
+          propertyAsLatex: "Q",
+          value: "Energy in",
+          unitAsLatex: "J",
+        },
+        {
+          propertyAsLatex: "m",
+          value: "Mass of substance in",
+          unitAsLatex: "kg",
+        },
+        {
+          propertyAsLatex: "c",
+          value: "Specific heat capacity in",
+          unitAsLatex: String.raw`J\cdot kg^{-1}\cdot K^{-1}`,
+        },
+      ]}
+    />
+    <p>We can rewrite this equation for specific heat capacity:</p>
+    <h3>Equation 2</h3>
+    <Math latex={String.raw`c=\frac{Q}{m \Delta T}`} />
+    <p>
+      In this experiment, the magnitude of energy transfer is measured as the
+      material cools when combined with another material of known heat capacity.
+      We find the magnitude of this energy transfer by substituting the
+      temperature drop of the known material into equation 1, then substituting
+      that into equation 2. This produces the following:
+    </p>
+    <h3>Equation 3</h3>
+    <Math
+      latex={String.raw`c_{s}\ =\ \frac{m_{w}c_{w} \Delta T_{w}}{m_{s} \Delta T_{s}}`}
+      whereList={[
+        {
+          propertyAsLatex: String.raw`c_{s}`,
+          value: "Specific heat capacity of solution in",
+          unitAsLatex: String.raw`J\cdot kg^{-1}\cdot K^{-1}`,
+        },
+        {
+          propertyAsLatex: String.raw`m_{w}`,
+          value: "Mass of material of known specific heat capacity in",
+          unitAsLatex: String.raw`kg`,
+        },
+        {
+          propertyAsLatex: String.raw`c_{w}`,
+          value: "Specific heat capacity of known material in ",
+          unitAsLatex: String.raw`J\cdot kg^{-1}\cdot K^{-1}`,
+        },
+        {
+          propertyAsLatex: String.raw`\Delta T_{w}`,
+          value: "Temperature change of known material in",
+          unitAsLatex: String.raw`K`,
+        },
+        {
+          propertyAsLatex: String.raw`m_{s}`,
+          value: "Mass of salt solution in",
+          unitAsLatex: String.raw`kg`,
+        },
+        {
+          propertyAsLatex: String.raw`\Delta T_{s}`,
+          value: "Temperature change of salt solution in",
+          unitAsLatex: String.raw`K`,
+        },
+      ]}
+    />
+    <h2>Hypothesis</h2>
+    <p>
+      Equation 3 relates the specific heat capacity to the mass of the solution.
+      The equation states an inverse proportionality between the specific heat
+      capacity of the solution and the mass of salt in the solution. Given this
+      relationship, it is expected that as the mass of salt increases, the
+      specific heat capacity decreases at a decreasing rate. The graph of mass
+      of salt against the inverse of the specific heat capacity will have a
+      positive, linear correlation. Since a mass of 0 salt in the water would be
+      distilled water, the graph is expected to have a y-intercept of
+      <InlineMath latex={String.raw`4186 J \cdot kg − 1 \cdot K − 1`} />
+      (Engineering Toolbox n.d.)
+    </p>
+    <h2>Diagram</h2>
+    <img
+      class="min-w-full"
+      src="images/diagram.svg"
+      alt="Diagram of the experiment"
+    />
+    <h2>Apparatus</h2>
+    <ul>
+      <li>1x hot plate</li>
+      <li>1x 1000ml beaker</li>
+      <li>1x test tube</li>
+      <li>1x retort stand</li>
+      <li>1x clamp</li>
+      <li>2x analogue thermometer</li>
+      <li>1x digital thermometer</li>
+      <li>1x calorimeter</li>
+      <li>1x computer with relevant software for thermometer</li>
+      <li>0.05kg sodium chloride (table salt)</li>
+    </ul>
+    <h2>Method</h2>
+    <p>
+      Initially, I wanted to pursue an experiment that investigated specific
+      heat capacity by heating solutions rather than cooling them down. In order
+      to achieve this, I decided to place a heating element in the solution
+      along with a thermometer. This method appeared sound to me until I had
+      completed my control trial and began to use salt. I accidentally made
+      bleach by running a current through the sodium chloride solution. I
+      considered indirectly heating the water, however, I decided it is too
+      difficult to heat and insulate water using the equipment in our school
+      lab.
+    </p>
+    <p>
+      I abandoned that method and decided on this alternative method that uses
+      cooling to determine the specific heat capacity rather than heating.
+    </p>
+    <ol>
+      <li>Note the mass of calorimeter.</li>
+      <li>
+        Fill the beaker with water so that when the test tube is filled with
+        25ml of solution and submerged in the water, the water level is above
+        that of the solution.
+      </li>
+      <li>Place the beaker on the hot plate and heat to above 90°C.</li>
+      <li>Fill calorimeter with 150ml of distilled water.</li>
+      <li>
+        Submerge the digital thermometer in the calorimeter and note the
+        temperature.
+      </li>
+      <li>Dissolve 0.0005kg of salt in 25ml of water.</li>
+      <li>
+        Transfer solution into test tube and submerge test tube in water. Heat
+        to 90°C exactly.
+      </li>
+      <li>
+        Once heated, transfer solution to calorimeter quickly and start the
+        digital thermometer.
+      </li>
+      <li>
+        Watch the thermometer carefully and record its maximum temperature.
+      </li>
+      <li>
+        Record the combined final weight of solution and water. Discard the
+        combined solution.
+      </li>
+      <li>
+        Repeat steps 4, 6, 7, 8, 9 for different amounts of salt, including a
+        control trial with 0kg of salt.
+      </li>
+    </ol>
+    <div class="border border-solid border-red-700 p-3 my-5">
+      <span class="text-red-700">SAFETY PRECAUTIONS:</span>
+      <ul>
+        <li>
+          The test tube is extremely hot after it is heated to 90°C. Use gloves
+          and take care with the liquid.
+        </li>
+        <li>
+          The hot plate is extremely hot. Stay aware of it and keep hands clear.
+        </li>
+      </ul>
+    </div>
+    <h2>Variables</h2>
+    <h3>Independent variable</h3>
+    <p>
+      The independent variable is the mass of salt in the solution, measured in <InlineMath
+        latex={String.raw`kg`}
+      />.
+    </p>
+    <h3>Dependent variable</h3>
+    <p>
+      The dependent variable is the specific heat capacity, measured in
+      <InlineMath latex={String.raw`J\cdot kg^{-1}\cdot K^{-1}`} />
+      . The dependent variable will be calculated using measured values of temperature
+      change in equation 3.
+    </p>
+    <h3>Controlled variables</h3>
+    <table class="border border-solid border-gray-500">
+      <tbody
+        ><tr>
+          <th>Variable</th>
+          <th>Action taken</th>
+        </tr>
+        <tr>
+          <td>Amount of water in calorimeter</td>
+          <td>
+            Fill the water directly within the calorimeter and measure using a
+            precise scale.
+          </td>
+        </tr>
+        <tr>
+          <td>Amount of water in solution</td>
+          <td>Measure using a precise scale.</td>
+        </tr>
+        <tr>
+          <td>Temperature of heated solution</td>
+          <td>
+            Watch the analogue thermometer carefully and stir the solution
+            often. Refill the large beaker with water when evaporation causes
+            water level to drop.
+          </td>
+        </tr>
+        <tr>
+          <td>Thermal energy lost due to non-perfect calorimeter</td>
+          <td>
+            Use same type of calorimeter when conducting multiple trials
+            concurrently.
+          </td>
+        </tr>
+        <tr>
+          <td>Salt content in water prior to adding salt</td>
+          <td>Use the same batch of distilled water for each trial.</td>
+        </tr>
+      </tbody>
+    </table>
+    <h2>Results</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>
+            <InlineMath latex={String.raw`m_{salt} \pm 0.000001 \: (kg)`} />
+          </th>
+          <th>
+            <InlineMath latex={String.raw`T_{avg} \pm 0.25 \: (K)`} />
+          </th>
+          <th>
+            <InlineMath
+              latex={String.raw`m_{avg\:final\:solution} \pm 0.00001 \: (kg)`}
+            />
+          </th>
+          <th>
+            <InlineMath
+              latex={String.raw`c_{avg} \: (J\cdot kg^{-1}\cdot K^{-1})`}
+            />
+          </th>
+          <th>
+            <InlineMath
+              latex={String.raw`\pm c_{avg} \: (J\cdot kg^{-1}\cdot K^{-1})`}
+            />
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>0.000000</td>
+          <td>302.9</td>
+          <td>0.17394</td>
+          <td>4274</td>
+          <td>100</td>
+        </tr>
+        <tr>
+          <td>0.000500</td>
+          <td>301.7</td>
+          <td>0.17360</td>
+          <td>4196</td>
+          <td>100</td>
+        </tr>
+        <tr>
+          <td>0.001000</td>
+          <td>301.9</td>
+          <td>0.17483</td>
+          <td>4084</td>
+          <td>100</td>
+        </tr>
+        <tr>
+          <td>0.001500</td>
+          <td>302.2</td>
+          <td>0.17584</td>
+          <td>4047</td>
+          <td>100</td>
+        </tr>
+        <tr>
+          <td>0.002000</td>
+          <td>303.3</td>
+          <td>0.17600</td>
+          <td>3874</td>
+          <td>100</td>
+        </tr>
+        <tr>
+          <td>0.002500</td>
+          <td>303.5</td>
+          <td>0.17665</td>
+          <td>3839</td>
+          <td>100</td>
+        </tr>
+        <tr>
+          <td>0.003000</td>
+          <td>303.1</td>
+          <td>0.17738</td>
+          <td>3558</td>
+          <td>100</td>
+        </tr>
+      </tbody>
+    </table>
+    <h3>Example calculation of specific heat capacity</h3>
+    <GivenList
+      givenList={[
+        {
+          latex: String.raw`m_{w} = 0.15\:kg`,
+        },
+        {
+          latex: String.raw`c_{w} = 4186 \:kg J\cdot kg^{-1}\cdot K^{-1}`,
+        },
+        {
+          latex: String.raw`\Delta T_{w} = 301.6-291.9 \: K`,
+          note: "(room temperature subtracted from measured temperature)",
+        },
+        {
+          latex: String.raw`m_{s} = 0.025 + 0.0005 \: kg`,
+          note: "(water mass added to salt mass)",
+        },
+        {
+          latex: String.raw`\Delta T_{s} = 90-28.6 \: K`,
+          note: "(measured temperature subtracted from heated temperature)",
+        },
+      ]}
+    />
+    <Math
+      latex={String.raw`c_{s} = \frac{m_{w} c_{w} \Delta T_{w}}{m_{s} \Delta T_{s}} = \frac{0.15 \cdot 4186 \cdot 9.7}{0.02309 \cdot 61.4}`}
+    />
+    <h3>Uncertainties</h3>
+    <table>
+      <tbody
+        ><tr>
+          <th>Variable</th>
+          <th>Explanation</th>
+        </tr>
+        <tr>
+          <td>
+            <InlineMath latex={String.raw`m_{salt} \pm 0.000001 \: (kg)`} />
+          </td>
+          <td>Digital scale resolution.</td>
+        </tr>
+        <tr>
+          <td>
+            <InlineMath latex={String.raw`T_{avg} \pm 0.25 \: (K)`} />
+          </td>
+          <td>Limitation of the digital thermometer software.</td>
+        </tr>
+        <tr>
+          <td>
+            <InlineMath
+              latex={String.raw`m_{avg\:final\:solution} \pm 0.00001 \: (kg)`}
+            />
+          </td>
+          <td>Digital scale resolution.</td>
+        </tr>
+        <tr>
+          <td>
+            <InlineMath latex={String.raw`m_{w} \pm 0.00001 \: (kg)`} />
+          </td>
+          <td> Digital scale resolution.</td>
+        </tr>
+      </tbody>
+    </table>
+    <h3>Propagation of uncertainty in specific heat capacity</h3>
+    <p>
+      Take equation 3, <InlineMath
+        latex={String.raw`c_{s}\ =\ \frac{m_{w}c_{w} \Delta T_{w}}{m_{s} \Delta T_{s}}`}
+      /> to be <InlineMath latex={String.raw`a=\frac{bcd}{ef}`} />
+    </p>
+    <p>Uncertainty in specific heat capacity is then:</p>
+    <Math
+      latex={String.raw`\frac{\Delta a}{a} = \frac{\Delta b}{b} + \frac{\Delta c}{c} + \frac{\Delta d}{d} + \frac{\Delta e}{e} + \frac{\Delta f}{f}`}
+    />
+    <p>
+      However, c is the known value of specific heat capacity for water, so it
+      does not need to be considered.
+    </p>
+    <h4>Example propagation for salt mass of 0.0005kg:</h4>
+    <p>Find fractional uncertainty:</p>
+    <Math
+      latex={String.raw`\frac{0.0001}{0.15} + \frac{0.25}{28.58-18.9} + \frac{0.000002}{0.0255} + \frac{0.25}{90-28.58} = 0.03063321`}
+    />
+    <p>Convert to absolute and round to a single significant figure:</p>
+    <Math
+      latex={String.raw`0.03063321 \cdot 4196.310053 = 128.55 \Rightarrow 100 \: J\cdot kg^{-1}\cdot K^{-1}`}
+    />
+    <h3>Graph</h3>
+    <img class="min-w-full" src="images/graph.svg" alt="Graph of data" />
+    <p>
+      This graph shows the mass of salt against the specific heat capacity. The
+      graph is linearised according to the hypothesis. The error bars were used
+      to create min and max lines of best fit.
+    </p>
+    <h2>Analysis</h2>
+    <p>
+      The hypothesis predicted that the graph of mass of salt against the
+      inverse of the specific heat capacity will have a positive, linear
+      correlation. The gradient of the main trendline on the graph proves this
+      prediction. This trendline is valid since it passes through all the error
+      bars. The maximum and minimum lines of best fit, while maintaining the
+      positive, linear correlation, do not pass through the error bars,
+      invalidating them. This is indicative of some random error in the data.
+    </p>
+    <ul>
+      <li>
+        Best fit gradient: <InlineMath
+          latex={String.raw`0.0142 \: J\cdot kg^{-1}\cdot K^{-1}`}
+        />
+      </li>
+      <li>
+        Min fit gradient: <InlineMath
+          latex={String.raw`0.0104 \: J\cdot kg^{-1}\cdot K^{-1}`}
+        />
+      </li>
+      <li>
+        Max fit gradient: <InlineMath
+          latex={String.raw`0.0211 \: J\cdot kg^{-1}\cdot K^{-1}`}
+        />
+      </li>
+      <li>
+        Gradient: <InlineMath
+          latex={String.raw`0.0142 \pm 0.00535 \: J\cdot kg^{-1}\cdot K^{-1}`}
+        />
+      </li>
+      <li>Gradient percentage uncertainty: 37.6%</li>
+    </ul>
+    <p>
+      The gradient has a large uncertainty. This means the precision could be
+      greatly improved. Despite issues with precision, the data does appear to
+      be rather accurate since the points appear consistently close to the best
+      fit gradient. There are two possible anomalies at 0.0025 and 0.003. The
+      former sits below the average trendline shown by other points and the
+      latter sits well above the trendline. Considering the error bars however,
+      both points could reasonably sit on the trendline.
+    </p>
+    <h2>Conclusion</h2>
+    <p>
+      In conclusion, the mass of sodium chloride in a solution is proportional
+      to the inverse of its specific heat capacity.
+    </p>
+    <h2>Evaluation</h2>
+    <p>
+      The design and method of this investigation was suitable for reaching a
+      viable conclusion. However, the experiment experienced some systematic and
+      random error that impacted the accuracy and precision of the data.
+    </p>
+    <table>
+      <tbody
+        ><tr>
+          <th>Weakness</th>
+          <th>Significance</th>
+          <th>Improvement</th>
+        </tr>
+        <tr>
+          <td>
+            The solution in the test tube was not evenly heated since there is a
+            temperature gradient in the beaker of water that is replicated in
+            the test tube. The amount of mixing of solution was not controlled
+            and final temperature of solution was not recorded.
+          </td>
+          <td>
+            The experiment assumes an even temperature distribution across the
+            solution. This issue means that the average temperature over the
+            solution could be significantly above or below the value used
+            (90°C).
+          </td>
+          <td>
+            The conductor of experiment could control the stirring periods and
+            ensure the solution is evenly heated by moving the thermometer
+            around the solution before combining the soution and distilled water
+            in calorimeter.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            The solution in the test tube sometimes had a considerable amount of
+            time out of water as it was being transferred to calorimeter.
+          </td>
+          <td>
+            Being out of the water meant that the solution could have cooled
+            down, further invalidating the 90°C value used in calculations.
+          </td>
+          <td>
+            The conductor of the experiment could move the calorimeter and hot
+            plate close together to minimise the time out of water. The
+            conductor could also consider some kind of insulation for the test
+            tube. Alternatively, a second person could measure the temperature
+            of solution before entering the water.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Manufacturing defects or damage to the calorimeters was not examined
+            when conducting multiple trials concurrently.
+          </td>
+          <td>
+            While not visually apparant, I noticed that between trials the
+            values of specific heat capacity would also vary with the
+            calorimeter I used. This is despite the calorimeters being seemingly
+            identical. This would add some random errors in the data.
+          </td>
+          <td>
+            Do not conduct multiple trials concurrently. Only use one
+            calorimeter.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            The calorimeter was cold for the first trial in each session that I
+            conducted this experiment.
+          </td>
+          <td>
+            Some thermal energy would be lost due to heating the calorimeter in
+            the first trial. This would mean the final temperature value may be
+            slightly lower for these trials.
+          </td>
+          <td>
+            Warm the calorimeter with hot water before conducting any trials.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <h2>Works cited</h2>
+    <p>Specific Heat of common Substances n.d., viewed 11 December 2022, &lthttps://www.engineeringtoolbox.com/specific-heat-capacity-d_391.html&gt.</p>
+  </main>
+</Layout>
