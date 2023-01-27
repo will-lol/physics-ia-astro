@@ -1,4 +1,4 @@
-import temml from "../scripts/temml.js";
+import temml from "../scripts/temml.js"
 
 interface whereItem {
   propertyAsLatex: string;
@@ -22,7 +22,7 @@ export default function Math(props: props) {
         <>
           <span className="text-sm">Where: </span>
           <ul className="my-4 mx-3 list-none">
-            {props.whereList!.map((whereItem) => {
+            {props.whereList!.map((whereItem, index) => {
               const propertyMathML: string = temml.renderToString(
                 whereItem.propertyAsLatex + "="
               );
@@ -31,7 +31,7 @@ export default function Math(props: props) {
               );
 
               return (
-                <li>
+                <li key={index}>
                   <div className="inline-block"
                     dangerouslySetInnerHTML={{ __html: propertyMathML }}
                   ></div>

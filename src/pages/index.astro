@@ -2,7 +2,6 @@
 import Layout from "../layouts/Layout.astro";
 import Math from "../components/Math";
 import InlineMath from "../components/InlineMath";
-import GivenList from "../components/GivenList";
 ---
 
 <Layout
@@ -13,7 +12,9 @@ import GivenList from "../components/GivenList";
       Investigating the effect that the mass of salt in water has on its
       specific heat capacity
     </h1>
-    <h2>Research question</h2>
+    <h2>Introduction</h2>
+    Have you ever been told to add salt to water to help it boil faster? 
+    <h3>Research question</h3>
     <p>
       After an experiment in class, I found I was keen to explore the concept of
       specific heat capacity further. I thought that the link between the mass
@@ -137,19 +138,22 @@ import GivenList from "../components/GivenList";
       Initially, I wanted to pursue an experiment that investigated specific
       heat capacity by heating solutions rather than cooling them down. In order
       to achieve this, I decided to place a heating element in the solution
-      along with a thermometer. This method appeared sound to me until I had
-      completed my control trial and began to use salt. I accidentally made
-      bleach by running a current through the sodium chloride solution. I
-      considered indirectly heating the water, however, I decided it is too
-      difficult to heat and insulate water using the equipment in our school
-      lab.
+      along with a thermometer, noting how long the solution took to reach a
+      desired temperature. I started this experiment with my control trial of 0
+      salt. My method initially appeared accurate. Unfortunately, when I
+      performed by second trial using a salt solution, I discovered that the
+      solution had undergone electrolysis. Since the changed solution may have
+      different thermal properties, I decided look for other ways to find the
+      heat capacity. I considered indirectly heating the water but ruled it out
+      on the basis of difficulty with the school lab equipment.
     </p>
     <p>
-      I abandoned that method and decided on this alternative method that uses
-      cooling to determine the specific heat capacity rather than heating.
+      I abandoned the idea of heating solutions to find their heat capacity and
+      began to explore cooling solutions. The below method is the one I
+      eventually decided on.
     </p>
     <ol>
-      <li>Note the mass of calorimeter.</li>
+      <li>Record the mass of calorimeter.</li>
       <li>
         Fill the beaker with water so that when the test tube is filled with
         25ml of solution and submerged in the water, the water level is above
@@ -158,10 +162,10 @@ import GivenList from "../components/GivenList";
       <li>Place the beaker on the hot plate and heat to above 90°C.</li>
       <li>Fill calorimeter with 150ml of distilled water.</li>
       <li>
-        Submerge the digital thermometer in the calorimeter and note the
+        Submerge the digital thermometer in the calorimeter and record the
         temperature.
       </li>
-      <li>Dissolve 0.0005kg of salt in 25ml of water.</li>
+      <li>Dissolve <InlineMath latex={String.raw`5.00\times10^{-4}\:kg`}></InlineMath> of salt in 25ml of water.</li>
       <li>
         Transfer solution into test tube and submerge test tube in water. Heat
         to 90°C exactly.
@@ -171,7 +175,7 @@ import GivenList from "../components/GivenList";
         digital thermometer.
       </li>
       <li>
-        Watch the thermometer carefully and record its maximum temperature.
+        Record the temperature of combined solution once the thermometer stabilises. 
       </li>
       <li>
         Record the combined final weight of solution and water. Discard the
@@ -216,14 +220,14 @@ import GivenList from "../components/GivenList";
           <th>Action taken</th>
         </tr>
         <tr>
-          <td>Amount of water in calorimeter</td>
+          <td>Mass of water in calorimeter</td>
           <td>
             Fill the water directly within the calorimeter and measure using a
             precise scale.
           </td>
         </tr>
         <tr>
-          <td>Amount of water in solution</td>
+          <td>Mass of water in solution</td>
           <td>Measure using a precise scale.</td>
         </tr>
         <tr>
@@ -248,18 +252,173 @@ import GivenList from "../components/GivenList";
       </tbody>
     </table>
     <h2>Results</h2>
+    <h3>Raw data</h3>
+    <h4>Table 1: Final temperature of solution vs mass of salt in solution</h4>
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th colspan="4"
+            ><InlineMath latex={String.raw`T_{final} \pm 0.25 \: (K)`} /></th
+          >
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td
+            ><InlineMath
+              latex={String.raw`m_{salt} \pm 1\times10^{-6} \: (kg)`}
+            /></td
+          >
+          <td>trial 1</td>
+          <td>trial 2</td>
+          <td>trial 3</td>
+          <td>average</td>
+        </tr>
+        <tr>
+          <td><InlineMath latex={String.raw`0.00\times10^{-4}`} /></td>
+          <td>302.9</td>
+          <td>303.0</td>
+          <td>303.0</td>
+          <td>302.9</td>
+        </tr>
+        <tr>
+          <td><InlineMath latex={String.raw`5.00\times10^{-4}`} /></td>
+          <td>301.8</td>
+          <td>301.6</td>
+          <td>301.9</td>
+          <td>301.7</td>
+        </tr>
+        <tr>
+          <td><InlineMath latex={String.raw`10.0\times10^{-4}`} /></td>
+          <td>302.0</td>
+          <td>302.0</td>
+          <td>301.9</td>
+          <td>301.9</td>
+        </tr>
+        <tr>
+          <td><InlineMath latex={String.raw`15.0\times10^{-4}`} /></td>
+          <td>302.4</td>
+          <td>302.5</td>
+          <td>301.8</td>
+          <td>302.2</td>
+        </tr>
+        <tr>
+          <td><InlineMath latex={String.raw`20.0\times10^{-4}`} /></td>
+          <td>303.8</td>
+          <td>303.0</td>
+          <td>303.3</td>
+          <td>303.3</td>
+        </tr>
+        <tr>
+          <td><InlineMath latex={String.raw`25.0\times10^{-4}`} /></td>
+          <td>303.2</td>
+          <td>303.5</td>
+          <td>303.7</td>
+          <td>303.5</td>
+        </tr>
+        <tr>
+          <td><InlineMath latex={String.raw`30.0\times10^{-4}`} /></td>
+          <td>302.8</td>
+          <td>303.4</td>
+          <td>303.0</td>
+          <td>303.1</td>
+        </tr>
+      </tbody>
+    </table>
+    <h4>Table 2: Final mass of combined solution and water</h4>
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th colspan="4"
+            ><InlineMath
+              latex={String.raw`m_{combined\:solution} \pm 1\times10^{-5} \: (kg)`}
+            /></th
+          >
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td
+            ><InlineMath
+              latex={String.raw`m_{salt} \pm 1\times10^{-6} \: (kg)`}
+            /></td
+          >
+          <td>trial 1</td>
+          <td>trial 2</td>
+          <td>trial 3</td>
+          <td>average</td>
+        </tr>
+        <tr>
+          <td><InlineMath latex={String.raw`0.00\times10^{-4}`} /></td>
+          <td>0.17500</td>
+          <td>0.17473</td>
+          <td>0.17210</td>
+          <td>0.17394</td>
+        </tr>
+        <tr>
+          <td><InlineMath latex={String.raw`5.00\times10^{-4}`} /></td>
+          <td>0.17309</td>
+          <td>0.17414</td>
+          <td>0.17358</td>
+          <td>0.17360</td>
+        </tr>
+        <tr>
+          <td><InlineMath latex={String.raw`10.0\times10^{-4}`} /></td>
+          <td>0.17509</td>
+          <td>0.17475</td>
+          <td>0.17466</td>
+          <td>0.17483</td>
+        </tr>
+        <tr>
+          <td><InlineMath latex={String.raw`15.0\times10^{-4}`} /></td>
+          <td>0.17562</td>
+          <td>0.17604</td>
+          <td>0.17587</td>
+          <td>0.17584</td>
+        </tr>
+        <tr>
+          <td><InlineMath latex={String.raw`20.0\times10^{-4}`} /></td>
+          <td>0.17606</td>
+          <td>0.17593</td>
+          <td>0.17601</td>
+          <td>0.17600</td>
+        </tr>
+        <tr>
+          <td><InlineMath latex={String.raw`25.0\times10^{-4}`} /></td>
+          <td>0.17669</td>
+          <td>0.17668</td>
+          <td>0.17659</td>
+          <td>0.17665</td>
+        </tr>
+        <tr>
+          <td><InlineMath latex={String.raw`30.0\times10^{-4}`} /></td>
+          <td>0.17798</td>
+          <td>0.17727</td>
+          <td>0.17689</td>
+          <td>0.17738</td>
+        </tr>
+      </tbody>
+    </table>
+    <h3>Processed data</h3>
+    <h4>
+      Table 3: Processed data table with calculated specific heat capacity
+    </h4>
     <table>
       <thead>
         <tr>
           <th>
-            <InlineMath latex={String.raw`m_{salt} \pm 0.000001 \: (kg)`} />
+            <InlineMath
+              latex={String.raw`m_{salt} \pm 1\times10^{-6} \: (kg)`}
+            />
           </th>
           <th>
             <InlineMath latex={String.raw`T_{avg} \pm 0.25 \: (K)`} />
           </th>
           <th>
             <InlineMath
-              latex={String.raw`m_{avg\:final\:solution} \pm 0.00001 \: (kg)`}
+              latex={String.raw`m_{avg\:combined\:solution} \pm 1\times10^{-5} \: (kg)`}
             />
           </th>
           <th>
@@ -276,81 +435,95 @@ import GivenList from "../components/GivenList";
       </thead>
       <tbody>
         <tr>
-          <td>0.000000</td>
+          <td><InlineMath latex={String.raw`0.00\times10^{-4}`} /></td>
           <td>302.9</td>
           <td>0.17394</td>
           <td>4274</td>
-          <td>100</td>
+          <td><InlineMath latex={String.raw`1\times10^{2}`}/></td>
         </tr>
         <tr>
-          <td>0.000500</td>
+          <td><InlineMath latex={String.raw`5.00\times10^{-4}`} /></td>
           <td>301.7</td>
           <td>0.17360</td>
           <td>4196</td>
-          <td>100</td>
+          <td><InlineMath latex={String.raw`1\times10^{2}`}/> </td>
         </tr>
         <tr>
-          <td>0.001000</td>
+          <td><InlineMath latex={String.raw`10.0\times10^{-4}`} /></td>
           <td>301.9</td>
           <td>0.17483</td>
           <td>4084</td>
-          <td>100</td>
+          <td><InlineMath latex={String.raw`1\times10^{2}`}/> </td>
         </tr>
         <tr>
-          <td>0.001500</td>
+          <td><InlineMath latex={String.raw`15.0\times10^{-4}`} /></td>
           <td>302.2</td>
           <td>0.17584</td>
           <td>4047</td>
-          <td>100</td>
+          <td><InlineMath latex={String.raw`1\times10^{2}`}/> </td>
         </tr>
         <tr>
-          <td>0.002000</td>
+          <td><InlineMath latex={String.raw`20.0\times10^{-4}`} /></td>
           <td>303.3</td>
           <td>0.17600</td>
           <td>3874</td>
-          <td>100</td>
+          <td><InlineMath latex={String.raw`1\times10^{2}`}/></td>
         </tr>
         <tr>
-          <td>0.002500</td>
+          <td><InlineMath latex={String.raw`25.0\times10^{-4}`} /></td>
           <td>303.5</td>
           <td>0.17665</td>
           <td>3839</td>
-          <td>100</td>
+          <td><InlineMath latex={String.raw`1\times10^{2}`}/></td>
         </tr>
         <tr>
-          <td>0.003000</td>
+          <td><InlineMath latex={String.raw`30.0\times10^{-4}`} /></td>
           <td>303.1</td>
           <td>0.17738</td>
           <td>3558</td>
-          <td>100</td>
+          <td><InlineMath latex={String.raw`1\times10^{2}`}/></td>
         </tr>
       </tbody>
     </table>
-    <h3>Example calculation of specific heat capacity</h3>
-    <GivenList
-      givenList={[
-        {
-          latex: String.raw`m_{w} = 0.15\:kg`,
-        },
-        {
-          latex: String.raw`c_{w} = 4186 \:kg J\cdot kg^{-1}\cdot K^{-1}`,
-        },
-        {
-          latex: String.raw`\Delta T_{w} = 301.6-291.9 \: K`,
-          note: "(room temperature subtracted from measured temperature)",
-        },
-        {
-          latex: String.raw`m_{s} = 0.025 + 0.0005 \: kg`,
-          note: "(water mass added to salt mass)",
-        },
-        {
-          latex: String.raw`\Delta T_{s} = 90-28.6 \: K`,
-          note: "(measured temperature subtracted from heated temperature)",
-        },
-      ]}
-    />
+    <h3>Calculation of specific heat capacity</h3>
+    <p>In order to calculate specific heat capacity, we will use equation 3:</p>
     <Math
-      latex={String.raw`c_{s} = \frac{m_{w} c_{w} \Delta T_{w}}{m_{s} \Delta T_{s}} = \frac{0.15 \cdot 4186 \cdot 9.7}{0.02309 \cdot 61.4}`}
+      latex={String.raw`c_{s}\ =\ \frac{\textcolor{blue}{m_{w}c_{w} \Delta T_{w}}}{\textcolor{red}{m_{s} \Delta T_{s}}}`}
+    />
+    <p>
+      Equation 3 has two components, the first, in blue, is the energy
+      transferred to the distilled water that was already in the calorimeter.
+      Since we measured the mass of this water to be 150ml, we will use that
+      value for <InlineMath latex={String.raw`m_{w}`} />. For <InlineMath
+        latex={String.raw`c_{w}`}
+      />, we are using distilled water, so we will use the textbook value for
+      water's specific heat capacity, <InlineMath
+        latex={String.raw`4186 \:kg J\cdot kg^{-1}\cdot K^{-1}`}
+      /> (Engineering Toolbox n.d.). We measured the temperature of the distilled
+      water before adding the salt solution and the temperature after adding the
+      salt solution, we can use these values to calculate a temperature delta, <InlineMath
+        latex={String.raw`\Delta T_{w}`}
+      />.
+    </p>
+    <p>
+      For the second component (in red), the mass of the solution (<InlineMath
+        latex={String.raw`m_{s}`}
+      />) is calculated by subtracting the mass of the distilled water (0.15kg)
+      from the measured mass of combined solution. This way, any solution that
+      evaporated is accounted for. The temperature delta (<InlineMath
+        latex={String.raw`\Delta T_{s}`}
+      />) for this component is calculated in a similar way, except the initial
+      temperature value is 363 K since that is the temperature we heated the
+      solution to.
+    </p>
+    <h4>
+      Example calculation for salt mass of <InlineMath
+        latex={String.raw`5.00 \times 10^{-4}`}
+      />, trial 2.
+    </h4>
+    <p>On this day, the room temperature was 291.9 K.</p>
+    <Math
+      latex={String.raw`c_{s} = \frac{m_{w} c_{w} \Delta T_{w}}{m_{s} \Delta T_{s}} = \frac{0.15 \cdot 4186 \cdot (301.6-291.9)}{(0.17414-0.15) \cdot (363-301.8)} = 4122 \: J \cdot kg − 1 \cdot K − 1`}
     />
     <h3>Uncertainties</h3>
     <table>
@@ -361,27 +534,27 @@ import GivenList from "../components/GivenList";
         </tr>
         <tr>
           <td>
-            <InlineMath latex={String.raw`m_{salt} \pm 0.000001 \: (kg)`} />
+            <InlineMath latex={String.raw`m_{salt} \pm 1\times10^{-6} \: (kg)`} />
           </td>
           <td>Digital scale resolution.</td>
         </tr>
         <tr>
           <td>
-            <InlineMath latex={String.raw`T_{avg} \pm 0.25 \: (K)`} />
+            <InlineMath latex={String.raw`T_{avg} \pm 2.5\times10^{-1} \: (K)`} />
           </td>
           <td>Limitation of the digital thermometer software.</td>
         </tr>
         <tr>
           <td>
             <InlineMath
-              latex={String.raw`m_{avg\:final\:solution} \pm 0.00001 \: (kg)`}
+              latex={String.raw`m_{avg\:final\:solution} \pm 1\times10^{-5} \: (kg)`}
             />
           </td>
           <td>Digital scale resolution.</td>
         </tr>
         <tr>
           <td>
-            <InlineMath latex={String.raw`m_{w} \pm 0.00001 \: (kg)`} />
+            <InlineMath latex={String.raw`m_{w} \pm 1\times10^{-5} \: (kg)`} />
           </td>
           <td> Digital scale resolution.</td>
         </tr>
@@ -398,17 +571,20 @@ import GivenList from "../components/GivenList";
       latex={String.raw`\frac{\Delta a}{a} = \frac{\Delta b}{b} + \frac{\Delta c}{c} + \frac{\Delta d}{d} + \frac{\Delta e}{e} + \frac{\Delta f}{f}`}
     />
     <p>
-      However, c is the known value of specific heat capacity for water, so it
-      does not need to be considered.
+      However, c is the known value of specific heat capacity for distilled water, so it
+      does not need to be considered:
     </p>
-    <h4>Example propagation for salt mass of 0.0005kg:</h4>
+    <Math
+    latex={String.raw`\frac{\Delta a}{a} = \frac{\Delta b}{b} + \frac{\Delta d}{d} + \frac{\Delta e}{e} + \frac{\Delta f}{f}`}
+    />
+    <h4>Example propagation for salt mass of 0.0005kg, trial 2:</h4>
     <p>Find fractional uncertainty:</p>
     <Math
-      latex={String.raw`\frac{0.0001}{0.15} + \frac{0.25}{28.58-18.9} + \frac{0.000002}{0.0255} + \frac{0.25}{90-28.58} = 0.03063321`}
+      latex={String.raw`\frac{0.0001}{0.15} + \frac{0.25}{301.6−291.9} + \frac{0.000002}{0.17414−0.15} + \frac{0.25}{363−301.8} = 0.0306076799`}
     />
     <p>Convert to absolute and round to a single significant figure:</p>
     <Math
-      latex={String.raw`0.03063321 \cdot 4196.310053 = 128.55 \Rightarrow 100 \: J\cdot kg^{-1}\cdot K^{-1}`}
+      latex={String.raw`0.0306076799 \cdot 4196.310053 = 126.18 \Rightarrow 100 \: J\cdot kg^{-1}\cdot K^{-1}`}
     />
     <h3>Graph</h3>
     <img class="min-w-full" src="images/graph.svg" alt="Graph of data" />
@@ -435,12 +611,12 @@ import GivenList from "../components/GivenList";
       </li>
       <li>
         Min fit gradient: <InlineMath
-          latex={String.raw`0.0104 \: J\cdot kg^{-1}\cdot K^{-1}`}
+          latex={String.raw`0.0120 \: J\cdot kg^{-1}\cdot K^{-1}`}
         />
       </li>
       <li>
         Max fit gradient: <InlineMath
-          latex={String.raw`0.0211 \: J\cdot kg^{-1}\cdot K^{-1}`}
+          latex={String.raw`0.0164 \: J\cdot kg^{-1}\cdot K^{-1}`}
         />
       </li>
       <li>
@@ -547,6 +723,9 @@ import GivenList from "../components/GivenList";
       </tbody>
     </table>
     <h2>Works cited</h2>
-    <p>Specific Heat of common Substances n.d., viewed 11 December 2022, &lthttps://www.engineeringtoolbox.com/specific-heat-capacity-d_391.html&gt.</p>
+    <p>
+      Specific Heat of common Substances n.d., viewed 11 December 2022,
+      &lthttps://www.engineeringtoolbox.com/specific-heat-capacity-d_391.html&gt.
+    </p>
   </main>
 </Layout>
