@@ -7,7 +7,7 @@
     font-style: normal;
     font-weight: 400;
     src: local(""),
-        url("fonts/spectral-v13-latin-regular.woff2") format("woff2");
+        url("../../public/fonts/spectral-v13-latin-regular.woff2") format("woff2");
 }
 
 @font-face {
@@ -15,14 +15,14 @@
     font-style: italic;
     font-weight: 400;
     src: local(""),
-        url("fonts/spectral-v13-latin-italic.woff2") format("woff2");
+        url("../../public/fonts/spectral-v13-latin-italic.woff2") format("woff2");
 }
 
 @font-face {
     font-family: "Spectral";
     font-style: normal;
     font-weight: 600;
-    src: local(""), url("fonts/spectral-v13-latin-600.woff2") format("woff2");
+    src: local(""), url("../../public/fonts/spectral-v13-latin-600.woff2") format("woff2");
 }
 
 @font-face {
@@ -30,12 +30,12 @@
     font-style: italic;
     font-weight: 600;
     src: local(""),
-        url("fonts/spectral-v13-latin-600italic.woff2") format("woff2");
+        url("../../public/fonts/spectral-v13-latin-600italic.woff2") format("woff2");
 }
 
 @font-face {
     font-family: 'Temml';
-    src: url('fonts/Temml.woff2') format('woff2');
+    src: url('../../public/fonts/Temml.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
