@@ -10,10 +10,13 @@ import react from "@astrojs/react";
 import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
+import critters from "astro-critters";
+
+// https://astro.build/config
 export default defineConfig({
   integrations: [tailwind({
     config: {
       applyBaseStyles: false
     }
-  }), react(), mdx()]
+  }), react(), mdx(), critters()]
 });
