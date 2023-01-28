@@ -1,4 +1,4 @@
---- 
+---
 import Layout from "../layouts/Layout.astro";
 import Math from "../components/Math";
 import InlineMath from "../components/InlineMath";
@@ -14,7 +14,7 @@ import InlineMath from "../components/InlineMath";
     </h1>
     <h2>Introduction</h2>
     <p>
-      Have you ever been told to add salt to water to help it boil faster? Or
+      Have you ever been told to add salt to water to help it to heat faster? Or
       noticed that the time it takes to heat water varies with the amount of
       water you are heating?
     </p>
@@ -24,31 +24,42 @@ import InlineMath from "../components/InlineMath";
       amount of thermal energy required to increase that objects temperature by
       1 K (Khan Academy 2021). However, this measurement isn't particularly
       useful because if the amount (mass, volume or moles) of that object
-      changes, the heat capacity must be recalculated. The
-      concept of specific heat capacity is founded on the assumption that the
-      amount of an object is directly proportional to its heat capacity. Using
-      this assumption, specific heat capacity can be defined as the amount of
-      thermal energy required to heat one amount unit (1 kilogram, 1 mole, 1
-      metre cubed) of a substance by 1 K (Tsokos 2014). Most commonly, and throughout this IA,
+      changes, the heat capacity must be recalculated. The concept of specific
+      heat capacity is founded on the assumption that the amount of an object is
+      directly proportional to its heat capacity. Using this assumption,
+      specific heat capacity can be defined as the amount of thermal energy
+      required to heat one amount unit (1 kilogram, 1 mole, 1 metre cubed) of a
+      substance by 1 K (Tsokos 2014). Most commonly, and throughout this IA,
       specific heat capacity refers to the amount of thermal energy required to
       heat 1 kg of a substance by 1 K.
     </p>
-    <h3>Theory</h3>
     <p>
       After studying specific heat capacity in class, I found myself unsatisfied
-      with not knowing why specific heat capacity varies between objects. 
+      with not knowing why specific heat capacity varies between objects. To
+      understand why the specific heat capacity varies between objects, it is
+      first helpful to investigate the concept of temperature. Temperature is
+      directly proportional to the average random kinetic energy within an
+      object (Tsokos 2014). Since the definition of temperature is so strict, it
+      can be said that any other store of energy that isn't random kinetic will
+      increase the specific heat capacity. This introduces many factors that
+      possibly affect specific heat capacity, such as chemical bonds. One such
+      factor that, according to Richard Feynman, is particularly important, is
+      the number of 'degrees of freedom' a given molecule has. Each degree of
+      freedom represents a parameter that is required to describe the motion of
+      a molecule (LibreTexts 2017). Only some of the energy used to heat a
+      substance will go toward degrees of freedom that increase the temperature,
+      and the number of degrees of freedom varies between molecules.
     </p>
-    <h3>Research question</h3>
     <p>
-      After an experiment in class, I found I was keen to explore the concept of
-      specific heat capacity further. I thought that the link between the mass
-      of salt dissolved in water and specific heat capacity would be interesting
-      to investigate. Hence, my research question is:
+      To investigate specific heat capacity further, I decided to explore sodium
+      chloride dissolved in water. I decided to investigate it at different
+      concentrations, which led me to my research question:
     </p>
     <p class="italic font-bold">
-      How does the mass of salt dissolved in water affect the specific heat
-      capacity of the solution?
+      How does the mass of sodium chloride dissolved in water affect the
+      specific heat capacity of the solution?
     </p>
+    <h2>Hypothesis</h2>
     <h3>Equation 1</h3>
     <Math
       latex={String.raw`Q=mc \Delta T`}
@@ -116,7 +127,6 @@ import InlineMath from "../components/InlineMath";
         },
       ]}
     />
-    <h2>Hypothesis</h2>
     <p>
       Equation 3 relates the specific heat capacity to the mass of the solution.
       The equation states an inverse proportionality between the specific heat
@@ -662,6 +672,13 @@ import InlineMath from "../components/InlineMath";
     <p>
       In conclusion, the mass of sodium chloride in a solution is proportional
       to the inverse of its specific heat capacity.
+    </p>
+    <!--TODO: FINISH APPLICATIONS SECTION-->
+    <p>
+      Specific heat capacity and sodium chloride have applications and
+      implications. In Ocean Thermal Energy Conversion, a process where the warm
+      surface of the ocean is used to vaporise a substance of low boiling point
+      which spins a turbine. ...blah blah vlah.
     </p>
     <h2>Evaluation</h2>
     <p>

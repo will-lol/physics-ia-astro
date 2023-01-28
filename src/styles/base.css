@@ -90,7 +90,7 @@
     }
 
     p {
-        @apply my-2 leading-loose text-justify
+        @apply mb-5 leading-loose text-justify
     }
 
     math {
