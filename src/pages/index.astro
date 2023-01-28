@@ -1,4 +1,4 @@
----
+--- 
 import Layout from "../layouts/Layout.astro";
 import Math from "../components/Math";
 import InlineMath from "../components/InlineMath";
@@ -7,13 +7,37 @@ import InlineMath from "../components/InlineMath";
 <Layout
   title="Investigating the effect that the mass of salt in water has on its specific heat capacity"
 >
-  <main>
+  <main class="max-w-3xl print:w-full">
     <h1 class="text-center underline font-bold my-5">
       Investigating the effect that the mass of salt in water has on its
       specific heat capacity
     </h1>
     <h2>Introduction</h2>
-    Have you ever been told to add salt to water to help it boil faster? 
+    <p>
+      Have you ever been told to add salt to water to help it boil faster? Or
+      noticed that the time it takes to heat water varies with the amount of
+      water you are heating?
+    </p>
+    <p>
+      These ideas may seem basic but are the basis of this IA and the idea of
+      specific heat capacity. The heat capacity of an object is defined as the
+      amount of thermal energy required to increase that objects temperature by
+      1 K (Khan Academy 2021). However, this measurement isn't particularly
+      useful because if the amount (mass, volume or moles) of that object
+      changes, the heat capacity must be recalculated. The
+      concept of specific heat capacity is founded on the assumption that the
+      amount of an object is directly proportional to its heat capacity. Using
+      this assumption, specific heat capacity can be defined as the amount of
+      thermal energy required to heat one amount unit (1 kilogram, 1 mole, 1
+      metre cubed) of a substance by 1 K (Tsokos 2014). Most commonly, and throughout this IA,
+      specific heat capacity refers to the amount of thermal energy required to
+      heat 1 kg of a substance by 1 K.
+    </p>
+    <h3>Theory</h3>
+    <p>
+      After studying specific heat capacity in class, I found myself unsatisfied
+      with not knowing why specific heat capacity varies between objects. 
+    </p>
     <h3>Research question</h3>
     <p>
       After an experiment in class, I found I was keen to explore the concept of
@@ -24,15 +48,6 @@ import InlineMath from "../components/InlineMath";
     <p class="italic font-bold">
       How does the mass of salt dissolved in water affect the specific heat
       capacity of the solution?
-    </p>
-    <h2>Theory</h2>
-    <p>
-      The specific heat capacity is a constant value existing for each unique
-      material. It is defined by the amount of energy it takes to heat 1
-      kilogram of that material by 1 kelvin. To calculate the specific heat
-      capacity, one must measure the amount of thermal energy transferred into
-      or out of a material of known mass. Often, this value is used to calculate
-      the amount of energy required to change a material's temperature:
     </p>
     <h3>Equation 1</h3>
     <Math
@@ -165,7 +180,10 @@ import InlineMath from "../components/InlineMath";
         Submerge the digital thermometer in the calorimeter and record the
         temperature.
       </li>
-      <li>Dissolve <InlineMath latex={String.raw`5.00\times10^{-4}\:kg`}></InlineMath> of salt in 25ml of water.</li>
+      <li>
+        Dissolve <InlineMath latex={String.raw`5.00\times10^{-4}\:kg`} /> of salt
+        in 25ml of water.
+      </li>
       <li>
         Transfer solution into test tube and submerge test tube in water. Heat
         to 90°C exactly.
@@ -175,7 +193,8 @@ import InlineMath from "../components/InlineMath";
         digital thermometer.
       </li>
       <li>
-        Record the temperature of combined solution once the thermometer stabilises. 
+        Record the temperature of combined solution once the thermometer
+        stabilises.
       </li>
       <li>
         Record the combined final weight of solution and water. Discard the
@@ -439,49 +458,49 @@ import InlineMath from "../components/InlineMath";
           <td>302.9</td>
           <td>0.17394</td>
           <td>4274</td>
-          <td><InlineMath latex={String.raw`1\times10^{2}`}/></td>
+          <td><InlineMath latex={String.raw`1\times10^{2}`} /></td>
         </tr>
         <tr>
           <td><InlineMath latex={String.raw`5.00\times10^{-4}`} /></td>
           <td>301.7</td>
           <td>0.17360</td>
           <td>4196</td>
-          <td><InlineMath latex={String.raw`1\times10^{2}`}/> </td>
+          <td><InlineMath latex={String.raw`1\times10^{2}`} /></td>
         </tr>
         <tr>
           <td><InlineMath latex={String.raw`10.0\times10^{-4}`} /></td>
           <td>301.9</td>
           <td>0.17483</td>
           <td>4084</td>
-          <td><InlineMath latex={String.raw`1\times10^{2}`}/> </td>
+          <td><InlineMath latex={String.raw`1\times10^{2}`} /></td>
         </tr>
         <tr>
           <td><InlineMath latex={String.raw`15.0\times10^{-4}`} /></td>
           <td>302.2</td>
           <td>0.17584</td>
           <td>4047</td>
-          <td><InlineMath latex={String.raw`1\times10^{2}`}/> </td>
+          <td><InlineMath latex={String.raw`1\times10^{2}`} /></td>
         </tr>
         <tr>
           <td><InlineMath latex={String.raw`20.0\times10^{-4}`} /></td>
           <td>303.3</td>
           <td>0.17600</td>
           <td>3874</td>
-          <td><InlineMath latex={String.raw`1\times10^{2}`}/></td>
+          <td><InlineMath latex={String.raw`1\times10^{2}`} /></td>
         </tr>
         <tr>
           <td><InlineMath latex={String.raw`25.0\times10^{-4}`} /></td>
           <td>303.5</td>
           <td>0.17665</td>
           <td>3839</td>
-          <td><InlineMath latex={String.raw`1\times10^{2}`}/></td>
+          <td><InlineMath latex={String.raw`1\times10^{2}`} /></td>
         </tr>
         <tr>
           <td><InlineMath latex={String.raw`30.0\times10^{-4}`} /></td>
           <td>303.1</td>
           <td>0.17738</td>
           <td>3558</td>
-          <td><InlineMath latex={String.raw`1\times10^{2}`}/></td>
+          <td><InlineMath latex={String.raw`1\times10^{2}`} /></td>
         </tr>
       </tbody>
     </table>
@@ -534,13 +553,17 @@ import InlineMath from "../components/InlineMath";
         </tr>
         <tr>
           <td>
-            <InlineMath latex={String.raw`m_{salt} \pm 1\times10^{-6} \: (kg)`} />
+            <InlineMath
+              latex={String.raw`m_{salt} \pm 1\times10^{-6} \: (kg)`}
+            />
           </td>
           <td>Digital scale resolution.</td>
         </tr>
         <tr>
           <td>
-            <InlineMath latex={String.raw`T_{avg} \pm 2.5\times10^{-1} \: (K)`} />
+            <InlineMath
+              latex={String.raw`T_{avg} \pm 2.5\times10^{-1} \: (K)`}
+            />
           </td>
           <td>Limitation of the digital thermometer software.</td>
         </tr>
@@ -571,11 +594,11 @@ import InlineMath from "../components/InlineMath";
       latex={String.raw`\frac{\Delta a}{a} = \frac{\Delta b}{b} + \frac{\Delta c}{c} + \frac{\Delta d}{d} + \frac{\Delta e}{e} + \frac{\Delta f}{f}`}
     />
     <p>
-      However, c is the known value of specific heat capacity for distilled water, so it
-      does not need to be considered:
+      However, c is the known value of specific heat capacity for distilled
+      water, so it does not need to be considered:
     </p>
     <Math
-    latex={String.raw`\frac{\Delta a}{a} = \frac{\Delta b}{b} + \frac{\Delta d}{d} + \frac{\Delta e}{e} + \frac{\Delta f}{f}`}
+      latex={String.raw`\frac{\Delta a}{a} = \frac{\Delta b}{b} + \frac{\Delta d}{d} + \frac{\Delta e}{e} + \frac{\Delta f}{f}`}
     />
     <h4>Example propagation for salt mass of 0.0005kg, trial 2:</h4>
     <p>Find fractional uncertainty:</p>

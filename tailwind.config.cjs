@@ -5,7 +5,11 @@ module.exports = {
 		fontFamily: {
 			serif: ['Spectral', 'serif'],
 		  },
-		extend: {},
+		extend: {
+			screens: {
+				print: {"raw": "print"}
+			}
+		},
 	},
 	plugins: [],
 }
