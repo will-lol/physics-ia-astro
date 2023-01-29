@@ -25,8 +25,8 @@ import InlineMath from "../components/InlineMath";
       1 K (Khan Academy 2021). However, this measurement isn't particularly
       useful because if the amount (mass, volume or moles) of that object
       changes, the heat capacity must be recalculated. The concept of specific
-      heat capacity is founded on the assumption that the amount of an object is
-      directly proportional to its heat capacity. Using this assumption,
+      heat capacity is founded on the assumption that the amount of an substance
+      is directly proportional to its heat capacity. Using this assumption,
       specific heat capacity can be defined as the amount of thermal energy
       required to heat one amount unit (1 kilogram, 1 mole, 1 metre cubed) of a
       substance by 1 K (Tsokos 2014). Most commonly, and throughout this IA,
@@ -35,16 +35,16 @@ import InlineMath from "../components/InlineMath";
     </p>
     <p>
       After studying specific heat capacity in class, I found myself unsatisfied
-      with not knowing why specific heat capacity varies between objects. To
-      understand why the specific heat capacity varies between objects, it is
+      with not knowing why specific heat capacity varies between substances. To
+      understand why the specific heat capacity varies between substances, it is
       first helpful to investigate the concept of temperature. Temperature is
       directly proportional to the average random kinetic energy within an
-      object (Tsokos 2014). Since the definition of temperature is so strict, it
-      can be said that any other store of energy that isn't random kinetic will
-      increase the specific heat capacity. This introduces many factors that
-      possibly affect specific heat capacity, such as chemical bonds. One such
-      factor that, according to Richard Feynman, is particularly important, is
-      the number of 'degrees of freedom' a given molecule has. Each degree of
+      object (Tsokos 2014). Since this proportionality is so strict, it can be
+      said that any other store of energy that isn't random kinetic will
+      increase the specific heat capacity. This introduces many factors that can
+      affect specific heat capacity, such as chemical bonds. One such factor
+      that, according to Richard Feynman, is particularly important, is the
+      number of 'degrees of freedom' a given molecule has. Each degree of
       freedom represents a parameter that is required to describe the motion of
       a molecule (LibreTexts 2017). Only some of the energy used to heat a
       substance will go toward degrees of freedom that increase the temperature,
@@ -60,6 +60,11 @@ import InlineMath from "../components/InlineMath";
       specific heat capacity of the solution?
     </p>
     <h2>Hypothesis</h2>
+    <p>
+      This experiment will involve finding the specific heat capacity of
+      different salt solutions.
+    </p>
+    <p>The specific heat capacity formula is the following:</p>
     <h3>Equation 1</h3>
     <Math
       latex={String.raw`Q=mc \Delta T`}
@@ -81,15 +86,16 @@ import InlineMath from "../components/InlineMath";
         },
       ]}
     />
-    <p>We can rewrite this equation for specific heat capacity:</p>
+    <p>It can be rearranged to find the specific heat capacity:</p>
     <h3>Equation 2</h3>
     <Math latex={String.raw`c=\frac{Q}{m \Delta T}`} />
     <p>
-      In this experiment, the magnitude of energy transfer is measured as the
-      material cools when combined with another material of known heat capacity.
-      We find the magnitude of this energy transfer by substituting the
-      temperature drop of the known material into equation 1, then substituting
-      that into equation 2. This produces the following:
+      In this experiment, a salt solution is heated and then mixed with a
+      substance of known mass and heat capacity. The energy transfer to the
+      substance of known mass and heat capacity is calculated using equation 1.
+      The mass, temperature change of salt solution and calculated energy
+      transfer is substituted into equation 2 to give the specific heat capacity
+      of the salt solution. Equation 3 represents this in a single equation.
     </p>
     <h3>Equation 3</h3>
     <Math
@@ -102,17 +108,17 @@ import InlineMath from "../components/InlineMath";
         },
         {
           propertyAsLatex: String.raw`m_{w}`,
-          value: "Mass of material of known specific heat capacity in",
+          value: "Mass of substance of known specific heat capacity in",
           unitAsLatex: String.raw`kg`,
         },
         {
           propertyAsLatex: String.raw`c_{w}`,
-          value: "Specific heat capacity of known material in ",
+          value: "Specific heat capacity of known substance in ",
           unitAsLatex: String.raw`J\cdot kg^{-1}\cdot K^{-1}`,
         },
         {
           propertyAsLatex: String.raw`\Delta T_{w}`,
-          value: "Temperature change of known material in",
+          value: "Temperature change of known substance in",
           unitAsLatex: String.raw`K`,
         },
         {
@@ -128,16 +134,23 @@ import InlineMath from "../components/InlineMath";
       ]}
     />
     <p>
-      Equation 3 relates the specific heat capacity to the mass of the solution.
       The equation states an inverse proportionality between the specific heat
-      capacity of the solution and the mass of salt in the solution. Given this
-      relationship, it is expected that as the mass of salt increases, the
-      specific heat capacity decreases at a decreasing rate. The graph of mass
-      of salt against the inverse of the specific heat capacity will have a
-      positive, linear correlation. Since a mass of 0 salt in the water would be
-      distilled water, the graph is expected to have a y-intercept of
-      <InlineMath latex={String.raw`4186 J \cdot kg − 1 \cdot K − 1`} />
-      (Engineering Toolbox n.d.)
+      capacity of the solution and the mass of the solution, which will increase
+      as salt is added. However, this proportionality may not hold because the
+      temperature changes may not be constant. Sodium chloride has a specific
+      heat capacity of <InlineMath
+        latex={String.raw`864 J \cdot kg − 1 \cdot K − 1`}
+      /> (Chase 1998). Given this value, it is expected that the graph of mass of
+      salt against specific heat capacity would have a negative correlation. If the
+      inverse proportionality between the specific heat capacity and mass of salt
+      solution holds true, the graph of mass of salt against the inverse of specific
+      heat capacity would have a positive, linear correlation. At the Y intercept,
+      the mass of salt in the solution would be 0, i.e. the solution would be distilled
+      water. The Y intercept on the graph is expected to be the inverse of the specific
+      heat capacity of distilled water, <InlineMath
+        latex={String.raw`4186 J \cdot kg − 1 \cdot K − 1`}
+      />
+      (Engineering Toolbox n.d.).
     </p>
     <h2>Diagram</h2>
     <img
@@ -644,7 +657,7 @@ import InlineMath from "../components/InlineMath";
       </li>
       <li>
         Min fit gradient: <InlineMath
-          latex={String.raw`0.0120 \: J\cdot kg^{-1}\cdot K^{-1}`}
+          latex={String.raw`0.012 \: J\cdot kg^{-1}\cdot K^{-1}`}
         />
       </li>
       <li>
@@ -654,10 +667,10 @@ import InlineMath from "../components/InlineMath";
       </li>
       <li>
         Gradient: <InlineMath
-          latex={String.raw`0.0142 \pm 0.00535 \: J\cdot kg^{-1}\cdot K^{-1}`}
+          latex={String.raw`0.0142 \pm 0.0022 \: J\cdot kg^{-1}\cdot K^{-1}`}
         />
       </li>
-      <li>Gradient percentage uncertainty: 37.6%</li>
+      <li>Gradient percentage uncertainty: 15.5%</li>
     </ul>
     <p>
       The gradient has a large uncertainty. This means the precision could be
@@ -709,8 +722,8 @@ import InlineMath from "../components/InlineMath";
           <td>
             The conductor of experiment could control the stirring periods and
             ensure the solution is evenly heated by moving the thermometer
-            around the solution before combining the soution and distilled water
-            in calorimeter.
+            around the solution before combining the solution and distilled
+            water in calorimeter.
           </td>
         </tr>
         <tr>
@@ -736,7 +749,7 @@ import InlineMath from "../components/InlineMath";
             when conducting multiple trials concurrently.
           </td>
           <td>
-            While not visually apparant, I noticed that between trials the
+            While not visually apparent, I noticed that between trials the
             values of specific heat capacity would also vary with the
             calorimeter I used. This is despite the calorimeters being seemingly
             identical. This would add some random errors in the data.

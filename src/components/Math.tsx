@@ -21,7 +21,7 @@ export default function Math(props: props) {
       {renderWhere && (
         <>
           <span className="text-sm">Where: </span>
-          <ul className="my-4 mx-3 list-none">
+          <ul className="mb-5 mx-3 list-none">
             {props.whereList!.map((whereItem, index) => {
               const propertyMathML: string = temml.renderToString(
                 whereItem.propertyAsLatex + "="
