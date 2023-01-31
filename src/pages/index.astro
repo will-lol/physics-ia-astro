@@ -65,7 +65,7 @@ import InlineMath from "../components/InlineMath";
       different salt solutions.
     </p>
     <p>The specific heat capacity formula is the following:</p>
-    <h3>Equation 1</h3>
+    <h3 class="text-gray-600 text-sm">Equation 1</h3>
     <Math
       latex={String.raw`Q=mc \Delta T`}
       whereList={[
@@ -87,7 +87,7 @@ import InlineMath from "../components/InlineMath";
       ]}
     />
     <p>It can be rearranged to find the specific heat capacity:</p>
-    <h3>Equation 2</h3>
+    <h3 class="text-gray-600 text-sm">Equation 2</h3>
     <Math latex={String.raw`c=\frac{Q}{m \Delta T}`} />
     <p>
       In this experiment, a salt solution is heated and then mixed with a
@@ -97,7 +97,7 @@ import InlineMath from "../components/InlineMath";
       transfer is substituted into equation 2 to give the specific heat capacity
       of the salt solution. Equation 3 represents this in a single equation.
     </p>
-    <h3>Equation 3</h3>
+    <h3 class="text-gray-600 text-sm">Equation 3</h3>
     <Math
       latex={String.raw`c_{s}\ =\ \frac{m_{w}c_{w} \Delta T_{w}}{m_{s} \Delta T_{s}}`}
       whereList={[
@@ -153,11 +153,10 @@ import InlineMath from "../components/InlineMath";
       (Engineering Toolbox n.d.).
     </p>
     <h2>Diagram</h2>
-    <img
-      class="min-w-full"
-      src="images/diagram.svg"
-      alt="Diagram of the experiment"
-    />
+    <figure>
+      <img src="images/diagram.svg" alt="Diagram of experiment setup" />
+      <figcaption>Figure 1: Diagram of experiment setup</figcaption>
+    </figure>
     <h2>Apparatus</h2>
     <ul>
       <li>1x hot plate</li>
@@ -255,278 +254,293 @@ import InlineMath from "../components/InlineMath";
       change in equation 3.
     </p>
     <h3>Controlled variables</h3>
-    <table class="border border-solid border-gray-500">
-      <tbody
-        ><tr>
-          <th>Variable</th>
-          <th>Action taken</th>
-        </tr>
-        <tr>
-          <td>Mass of water in calorimeter</td>
-          <td>
-            Fill the water directly within the calorimeter and measure using a
-            precise scale.
-          </td>
-        </tr>
-        <tr>
-          <td>Mass of water in solution</td>
-          <td>Measure using a precise scale.</td>
-        </tr>
-        <tr>
-          <td>Temperature of heated solution</td>
-          <td>
-            Watch the analogue thermometer carefully and stir the solution
-            often. Refill the large beaker with water when evaporation causes
-            water level to drop.
-          </td>
-        </tr>
-        <tr>
-          <td>Thermal energy lost due to non-perfect calorimeter</td>
-          <td>
-            Use same type of calorimeter when conducting multiple trials
-            concurrently.
-          </td>
-        </tr>
-        <tr>
-          <td>Salt content in water prior to adding salt</td>
-          <td>Use the same batch of distilled water for each trial.</td>
-        </tr>
-      </tbody>
-    </table>
+    <figure>
+      <table class="border border-solid border-gray-500">
+        <tbody
+          ><tr>
+            <th>Variable</th>
+            <th>Action taken</th>
+          </tr>
+          <tr>
+            <td>Mass of water in calorimeter</td>
+            <td>
+              Fill the water directly within the calorimeter and measure using a
+              precise scale.
+            </td>
+          </tr>
+          <tr>
+            <td>Mass of water in solution</td>
+            <td>Measure using a precise scale.</td>
+          </tr>
+          <tr>
+            <td>Temperature of heated solution</td>
+            <td>
+              Watch the analogue thermometer carefully and stir the solution
+              often. Refill the large beaker with water when evaporation causes
+              water level to drop.
+            </td>
+          </tr>
+          <tr>
+            <td>Thermal energy lost due to non-perfect calorimeter</td>
+            <td>
+              Use same type of calorimeter when conducting multiple trials
+              concurrently.
+            </td>
+          </tr>
+          <tr>
+            <td>Salt content in water prior to adding salt</td>
+            <td>Use the same batch of distilled water for each trial.</td>
+          </tr>
+        </tbody>
+      </table>
+      <figcaption>
+        Table 1: Controlled variables and associated actions
+      </figcaption>
+    </figure>
     <h2>Results</h2>
     <h3>Raw data</h3>
-    <h4>Table 1: Final temperature of solution vs mass of salt in solution</h4>
-    <table>
-      <thead>
-        <tr>
-          <th></th>
-          <th colspan="4"
-            ><InlineMath latex={String.raw`T_{final} \pm 0.25 \: (K)`} /></th
-          >
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td
-            ><InlineMath
-              latex={String.raw`m_{salt} \pm 1\times10^{-6} \: (kg)`}
-            /></td
-          >
-          <td>trial 1</td>
-          <td>trial 2</td>
-          <td>trial 3</td>
-          <td>average</td>
-        </tr>
-        <tr>
-          <td><InlineMath latex={String.raw`0.00\times10^{-4}`} /></td>
-          <td>302.9</td>
-          <td>303.0</td>
-          <td>303.0</td>
-          <td>302.9</td>
-        </tr>
-        <tr>
-          <td><InlineMath latex={String.raw`5.00\times10^{-4}`} /></td>
-          <td>301.8</td>
-          <td>301.6</td>
-          <td>301.9</td>
-          <td>301.7</td>
-        </tr>
-        <tr>
-          <td><InlineMath latex={String.raw`10.0\times10^{-4}`} /></td>
-          <td>302.0</td>
-          <td>302.0</td>
-          <td>301.9</td>
-          <td>301.9</td>
-        </tr>
-        <tr>
-          <td><InlineMath latex={String.raw`15.0\times10^{-4}`} /></td>
-          <td>302.4</td>
-          <td>302.5</td>
-          <td>301.8</td>
-          <td>302.2</td>
-        </tr>
-        <tr>
-          <td><InlineMath latex={String.raw`20.0\times10^{-4}`} /></td>
-          <td>303.8</td>
-          <td>303.0</td>
-          <td>303.3</td>
-          <td>303.3</td>
-        </tr>
-        <tr>
-          <td><InlineMath latex={String.raw`25.0\times10^{-4}`} /></td>
-          <td>303.2</td>
-          <td>303.5</td>
-          <td>303.7</td>
-          <td>303.5</td>
-        </tr>
-        <tr>
-          <td><InlineMath latex={String.raw`30.0\times10^{-4}`} /></td>
-          <td>302.8</td>
-          <td>303.4</td>
-          <td>303.0</td>
-          <td>303.1</td>
-        </tr>
-      </tbody>
-    </table>
-    <h4>Table 2: Final mass of combined solution and water</h4>
-    <table>
-      <thead>
-        <tr>
-          <th></th>
-          <th colspan="4"
-            ><InlineMath
-              latex={String.raw`m_{combined\:solution} \pm 1\times10^{-5} \: (kg)`}
-            /></th
-          >
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td
-            ><InlineMath
-              latex={String.raw`m_{salt} \pm 1\times10^{-6} \: (kg)`}
-            /></td
-          >
-          <td>trial 1</td>
-          <td>trial 2</td>
-          <td>trial 3</td>
-          <td>average</td>
-        </tr>
-        <tr>
-          <td><InlineMath latex={String.raw`0.00\times10^{-4}`} /></td>
-          <td>0.17500</td>
-          <td>0.17473</td>
-          <td>0.17210</td>
-          <td>0.17394</td>
-        </tr>
-        <tr>
-          <td><InlineMath latex={String.raw`5.00\times10^{-4}`} /></td>
-          <td>0.17309</td>
-          <td>0.17414</td>
-          <td>0.17358</td>
-          <td>0.17360</td>
-        </tr>
-        <tr>
-          <td><InlineMath latex={String.raw`10.0\times10^{-4}`} /></td>
-          <td>0.17509</td>
-          <td>0.17475</td>
-          <td>0.17466</td>
-          <td>0.17483</td>
-        </tr>
-        <tr>
-          <td><InlineMath latex={String.raw`15.0\times10^{-4}`} /></td>
-          <td>0.17562</td>
-          <td>0.17604</td>
-          <td>0.17587</td>
-          <td>0.17584</td>
-        </tr>
-        <tr>
-          <td><InlineMath latex={String.raw`20.0\times10^{-4}`} /></td>
-          <td>0.17606</td>
-          <td>0.17593</td>
-          <td>0.17601</td>
-          <td>0.17600</td>
-        </tr>
-        <tr>
-          <td><InlineMath latex={String.raw`25.0\times10^{-4}`} /></td>
-          <td>0.17669</td>
-          <td>0.17668</td>
-          <td>0.17659</td>
-          <td>0.17665</td>
-        </tr>
-        <tr>
-          <td><InlineMath latex={String.raw`30.0\times10^{-4}`} /></td>
-          <td>0.17798</td>
-          <td>0.17727</td>
-          <td>0.17689</td>
-          <td>0.17738</td>
-        </tr>
-      </tbody>
-    </table>
+    <figure>
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th colspan="4"
+              ><InlineMath latex={String.raw`T_{final} \pm 0.25 \: (K)`} /></th
+            >
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td
+              ><InlineMath
+                latex={String.raw`m_{salt} \pm 1\times10^{-6} \: (kg)`}
+              /></td
+            >
+            <td>trial 1</td>
+            <td>trial 2</td>
+            <td>trial 3</td>
+            <td>average</td>
+          </tr>
+          <tr>
+            <td><InlineMath latex={String.raw`0.00\times10^{-4}`} /></td>
+            <td>302.9</td>
+            <td>303.0</td>
+            <td>303.0</td>
+            <td>302.9</td>
+          </tr>
+          <tr>
+            <td><InlineMath latex={String.raw`5.00\times10^{-4}`} /></td>
+            <td>301.8</td>
+            <td>301.6</td>
+            <td>301.9</td>
+            <td>301.7</td>
+          </tr>
+          <tr>
+            <td><InlineMath latex={String.raw`10.0\times10^{-4}`} /></td>
+            <td>302.0</td>
+            <td>302.0</td>
+            <td>301.9</td>
+            <td>301.9</td>
+          </tr>
+          <tr>
+            <td><InlineMath latex={String.raw`15.0\times10^{-4}`} /></td>
+            <td>302.4</td>
+            <td>302.5</td>
+            <td>301.8</td>
+            <td>302.2</td>
+          </tr>
+          <tr>
+            <td><InlineMath latex={String.raw`20.0\times10^{-4}`} /></td>
+            <td>303.8</td>
+            <td>303.0</td>
+            <td>303.3</td>
+            <td>303.3</td>
+          </tr>
+          <tr>
+            <td><InlineMath latex={String.raw`25.0\times10^{-4}`} /></td>
+            <td>303.2</td>
+            <td>303.5</td>
+            <td>303.7</td>
+            <td>303.5</td>
+          </tr>
+          <tr>
+            <td><InlineMath latex={String.raw`30.0\times10^{-4}`} /></td>
+            <td>302.8</td>
+            <td>303.4</td>
+            <td>303.0</td>
+            <td>303.1</td>
+          </tr>
+        </tbody>
+      </table>
+      <figcaption>
+        Table 2: Final temperature of solution vs mass of salt in solution
+      </figcaption>
+    </figure>
+    <figure>
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th colspan="4"
+              ><InlineMath
+                latex={String.raw`m_{combined\:solution} \pm 1\times10^{-5} \: (kg)`}
+              /></th
+            >
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td
+              ><InlineMath
+                latex={String.raw`m_{salt} \pm 1\times10^{-6} \: (kg)`}
+              /></td
+            >
+            <td>trial 1</td>
+            <td>trial 2</td>
+            <td>trial 3</td>
+            <td>average</td>
+          </tr>
+          <tr>
+            <td><InlineMath latex={String.raw`0.00\times10^{-4}`} /></td>
+            <td>0.17500</td>
+            <td>0.17473</td>
+            <td>0.17210</td>
+            <td>0.17394</td>
+          </tr>
+          <tr>
+            <td><InlineMath latex={String.raw`5.00\times10^{-4}`} /></td>
+            <td>0.17309</td>
+            <td>0.17414</td>
+            <td>0.17358</td>
+            <td>0.17360</td>
+          </tr>
+          <tr>
+            <td><InlineMath latex={String.raw`10.0\times10^{-4}`} /></td>
+            <td>0.17509</td>
+            <td>0.17475</td>
+            <td>0.17466</td>
+            <td>0.17483</td>
+          </tr>
+          <tr>
+            <td><InlineMath latex={String.raw`15.0\times10^{-4}`} /></td>
+            <td>0.17562</td>
+            <td>0.17604</td>
+            <td>0.17587</td>
+            <td>0.17584</td>
+          </tr>
+          <tr>
+            <td><InlineMath latex={String.raw`20.0\times10^{-4}`} /></td>
+            <td>0.17606</td>
+            <td>0.17593</td>
+            <td>0.17601</td>
+            <td>0.17600</td>
+          </tr>
+          <tr>
+            <td><InlineMath latex={String.raw`25.0\times10^{-4}`} /></td>
+            <td>0.17669</td>
+            <td>0.17668</td>
+            <td>0.17659</td>
+            <td>0.17665</td>
+          </tr>
+          <tr>
+            <td><InlineMath latex={String.raw`30.0\times10^{-4}`} /></td>
+            <td>0.17798</td>
+            <td>0.17727</td>
+            <td>0.17689</td>
+            <td>0.17738</td>
+          </tr>
+        </tbody>
+      </table>
+      <figcaption>
+        Table 3: Final mass of combined solution and water
+      </figcaption>
+    </figure>
     <h3>Processed data</h3>
-    <h4>
-      Table 3: Processed data table with calculated specific heat capacity
-    </h4>
-    <table>
-      <thead>
-        <tr>
-          <th>
-            <InlineMath
-              latex={String.raw`m_{salt} \pm 1\times10^{-6} \: (kg)`}
-            />
-          </th>
-          <th>
-            <InlineMath latex={String.raw`T_{avg} \pm 0.25 \: (K)`} />
-          </th>
-          <th>
-            <InlineMath
-              latex={String.raw`m_{avg\:combined\:solution} \pm 1\times10^{-5} \: (kg)`}
-            />
-          </th>
-          <th>
-            <InlineMath
-              latex={String.raw`c_{avg} \: (J\cdot kg^{-1}\cdot K^{-1})`}
-            />
-          </th>
-          <th>
-            <InlineMath
-              latex={String.raw`\pm c_{avg} \: (J\cdot kg^{-1}\cdot K^{-1})`}
-            />
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><InlineMath latex={String.raw`0.00\times10^{-4}`} /></td>
-          <td>302.9</td>
-          <td>0.17394</td>
-          <td>4274</td>
-          <td><InlineMath latex={String.raw`1\times10^{2}`} /></td>
-        </tr>
-        <tr>
-          <td><InlineMath latex={String.raw`5.00\times10^{-4}`} /></td>
-          <td>301.7</td>
-          <td>0.17360</td>
-          <td>4196</td>
-          <td><InlineMath latex={String.raw`1\times10^{2}`} /></td>
-        </tr>
-        <tr>
-          <td><InlineMath latex={String.raw`10.0\times10^{-4}`} /></td>
-          <td>301.9</td>
-          <td>0.17483</td>
-          <td>4084</td>
-          <td><InlineMath latex={String.raw`1\times10^{2}`} /></td>
-        </tr>
-        <tr>
-          <td><InlineMath latex={String.raw`15.0\times10^{-4}`} /></td>
-          <td>302.2</td>
-          <td>0.17584</td>
-          <td>4047</td>
-          <td><InlineMath latex={String.raw`1\times10^{2}`} /></td>
-        </tr>
-        <tr>
-          <td><InlineMath latex={String.raw`20.0\times10^{-4}`} /></td>
-          <td>303.3</td>
-          <td>0.17600</td>
-          <td>3874</td>
-          <td><InlineMath latex={String.raw`1\times10^{2}`} /></td>
-        </tr>
-        <tr>
-          <td><InlineMath latex={String.raw`25.0\times10^{-4}`} /></td>
-          <td>303.5</td>
-          <td>0.17665</td>
-          <td>3839</td>
-          <td><InlineMath latex={String.raw`1\times10^{2}`} /></td>
-        </tr>
-        <tr>
-          <td><InlineMath latex={String.raw`30.0\times10^{-4}`} /></td>
-          <td>303.1</td>
-          <td>0.17738</td>
-          <td>3558</td>
-          <td><InlineMath latex={String.raw`1\times10^{2}`} /></td>
-        </tr>
-      </tbody>
-    </table>
+    <figure>
+      <table>
+        <thead>
+          <tr>
+            <th>
+              <InlineMath
+                latex={String.raw`m_{salt} \pm 1\times10^{-6} \: (kg)`}
+              />
+            </th>
+            <th>
+              <InlineMath latex={String.raw`T_{avg} \pm 0.25 \: (K)`} />
+            </th>
+            <th>
+              <InlineMath
+                latex={String.raw`m_{avg\:combined\:solution} \pm 1\times10^{-5} \: (kg)`}
+              />
+            </th>
+            <th>
+              <InlineMath
+                latex={String.raw`c_{avg} \: (J\cdot kg^{-1}\cdot K^{-1})`}
+              />
+            </th>
+            <th>
+              <InlineMath
+                latex={String.raw`\pm c_{avg} \: (J\cdot kg^{-1}\cdot K^{-1})`}
+              />
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><InlineMath latex={String.raw`0.00\times10^{-4}`} /></td>
+            <td>302.9</td>
+            <td>0.17394</td>
+            <td>4274</td>
+            <td><InlineMath latex={String.raw`1\times10^{2}`} /></td>
+          </tr>
+          <tr>
+            <td><InlineMath latex={String.raw`5.00\times10^{-4}`} /></td>
+            <td>301.7</td>
+            <td>0.17360</td>
+            <td>4196</td>
+            <td><InlineMath latex={String.raw`1\times10^{2}`} /></td>
+          </tr>
+          <tr>
+            <td><InlineMath latex={String.raw`10.0\times10^{-4}`} /></td>
+            <td>301.9</td>
+            <td>0.17483</td>
+            <td>4084</td>
+            <td><InlineMath latex={String.raw`1\times10^{2}`} /></td>
+          </tr>
+          <tr>
+            <td><InlineMath latex={String.raw`15.0\times10^{-4}`} /></td>
+            <td>302.2</td>
+            <td>0.17584</td>
+            <td>4047</td>
+            <td><InlineMath latex={String.raw`1\times10^{2}`} /></td>
+          </tr>
+          <tr>
+            <td><InlineMath latex={String.raw`20.0\times10^{-4}`} /></td>
+            <td>303.3</td>
+            <td>0.17600</td>
+            <td>3874</td>
+            <td><InlineMath latex={String.raw`1\times10^{2}`} /></td>
+          </tr>
+          <tr>
+            <td><InlineMath latex={String.raw`25.0\times10^{-4}`} /></td>
+            <td>303.5</td>
+            <td>0.17665</td>
+            <td>3839</td>
+            <td><InlineMath latex={String.raw`1\times10^{2}`} /></td>
+          </tr>
+          <tr>
+            <td><InlineMath latex={String.raw`30.0\times10^{-4}`} /></td>
+            <td>303.1</td>
+            <td>0.17738</td>
+            <td>3558</td>
+            <td><InlineMath latex={String.raw`1\times10^{2}`} /></td>
+          </tr>
+        </tbody>
+      </table>
+      <figcaption>
+        Table 4: Processed data table with calculated specific heat capacity
+      </figcaption>
+    </figure>
     <h3>Calculation of specific heat capacity</h3>
     <p>In order to calculate specific heat capacity, we will use equation 3:</p>
     <Math
@@ -568,45 +582,52 @@ import InlineMath from "../components/InlineMath";
       latex={String.raw`c_{s} = \frac{m_{w} c_{w} \Delta T_{w}}{m_{s} \Delta T_{s}} = \frac{0.15 \cdot 4186 \cdot (301.6-291.9)}{(0.17414-0.15) \cdot (363-301.8)} = 4122 \: J \cdot kg − 1 \cdot K − 1`}
     />
     <h3>Uncertainties</h3>
-    <table>
-      <tbody
-        ><tr>
-          <th>Variable</th>
-          <th>Explanation</th>
-        </tr>
-        <tr>
-          <td>
-            <InlineMath
-              latex={String.raw`m_{salt} \pm 1\times10^{-6} \: (kg)`}
-            />
-          </td>
-          <td>Digital scale resolution.</td>
-        </tr>
-        <tr>
-          <td>
-            <InlineMath
-              latex={String.raw`T_{avg} \pm 2.5\times10^{-1} \: (K)`}
-            />
-          </td>
-          <td>Limitation of the digital thermometer software.</td>
-        </tr>
-        <tr>
-          <td>
-            <InlineMath
-              latex={String.raw`m_{avg\:final\:solution} \pm 1\times10^{-5} \: (kg)`}
-            />
-          </td>
-          <td>Digital scale resolution.</td>
-        </tr>
-        <tr>
-          <td>
-            <InlineMath latex={String.raw`m_{w} \pm 1\times10^{-5} \: (kg)`} />
-          </td>
-          <td> Digital scale resolution.</td>
-        </tr>
-      </tbody>
-    </table>
-    <h3>Propagation of uncertainty in specific heat capacity</h3>
+    <figure>
+      <table>
+        <tbody
+          ><tr>
+            <th>Variable</th>
+            <th>Explanation</th>
+          </tr>
+          <tr>
+            <td>
+              <InlineMath
+                latex={String.raw`m_{salt} \pm 1\times10^{-6} \: (kg)`}
+              />
+            </td>
+            <td>Digital scale resolution.</td>
+          </tr>
+          <tr>
+            <td>
+              <InlineMath
+                latex={String.raw`T_{avg} \pm 2.5\times10^{-1} \: (K)`}
+              />
+            </td>
+            <td>Limitation of the digital thermometer software.</td>
+          </tr>
+          <tr>
+            <td>
+              <InlineMath
+                latex={String.raw`m_{avg\:final\:solution} \pm 1\times10^{-5} \: (kg)`}
+              />
+            </td>
+            <td>Digital scale resolution.</td>
+          </tr>
+          <tr>
+            <td>
+              <InlineMath
+                latex={String.raw`m_{w} \pm 1\times10^{-5} \: (kg)`}
+              />
+            </td>
+            <td> Digital scale resolution.</td>
+          </tr>
+        </tbody>
+      </table>
+      <figcaption>
+        Table 5: Uncertainties and associated explanations
+      </figcaption>
+    </figure>
+    <h4>Propagation of uncertainty of specific heat capacity</h4>
     <p>
       Take equation 3, <InlineMath
         latex={String.raw`c_{s}\ =\ \frac{m_{w}c_{w} \Delta T_{w}}{m_{s} \Delta T_{s}}`}
@@ -623,7 +644,7 @@ import InlineMath from "../components/InlineMath";
     <Math
       latex={String.raw`\frac{\Delta a}{a} = \frac{\Delta b}{b} + \frac{\Delta d}{d} + \frac{\Delta e}{e} + \frac{\Delta f}{f}`}
     />
-    <h4>Example propagation for salt mass of 0.0005kg, trial 2:</h4>
+    <h5>Example propagation for salt mass of 0.0005kg, trial 2:</h5>
     <p>Find fractional uncertainty:</p>
     <Math
       latex={String.raw`\frac{0.0001}{0.15} + \frac{0.25}{301.6−291.9} + \frac{0.000002}{0.17414−0.15} + \frac{0.25}{363−301.8} = 0.0306076799`}
@@ -633,21 +654,38 @@ import InlineMath from "../components/InlineMath";
       latex={String.raw`0.0306076799 \cdot 4196.310053 = 126.18 \Rightarrow 100 \: J\cdot kg^{-1}\cdot K^{-1}`}
     />
     <h3>Graph</h3>
-    <img class="min-w-full" src="images/graph.svg" alt="Graph of data" />
+    <figure>
+      <img class="min-w-full" src="images/graph.svg" alt="Graph of data" />
+      <figcaption>Figure 2: Graph</figcaption>
+    </figure>
     <p>
-      This graph shows the mass of salt against the specific heat capacity. The
+      Figure 2 shows the mass of salt against the specific heat capacity. The
       graph is linearised according to the hypothesis. The error bars were used
       to create min and max lines of best fit.
     </p>
-    <h2>Analysis</h2>
+    <h2>Analysis and conclusion</h2>
     <p>
-      The hypothesis predicted that the graph of mass of salt against the
-      inverse of the specific heat capacity will have a positive, linear
-      correlation. The gradient of the main trendline on the graph proves this
-      prediction. This trendline is valid since it passes through all the error
-      bars. The maximum and minimum lines of best fit, while maintaining the
-      positive, linear correlation, do not pass through the error bars,
-      invalidating them. This is indicative of some random error in the data.
+      Figure 2 shows a positive, linear correlation. The points on the graph lie
+      closely to the trendline and the trendline passes through all the error
+      bars. Some points, like the last 2, deviate further from the trendline.
+      This error does not appear to be systematic and is likely random. These
+      trendline still passes through the error bars of these points, so there
+      are no grounds to remove them. The hypothesis predicted that the graph of
+      mass of salt against the inverse of the specific heat capacity will have a
+      positive, linear correlation.
+    </p>
+    <p>
+      Figure 2 shows a proportionality between the mass of salt and the inverse
+      of specific heat capacity, as predicted by the hypothesis. However, the
+      appearance of proportionality may be decieving in this instance due to the
+      non-constant nature of the other variables in equation 3, as discussed in
+      the hypothesis section. It is possible that if the range of the data was
+      extended, the proportionality would not hold true due to this issue.
+    </p>
+    <p>
+      Figure 2 also features minimum and maximum lines of best fit, both of
+      which pass through all the error bars. The minimum and maximum lines of
+      best fit are used to calculate an uncertainty in the gradient.
     </p>
     <ul>
       <li>
@@ -673,15 +711,10 @@ import InlineMath from "../components/InlineMath";
       <li>Gradient percentage uncertainty: 15.5%</li>
     </ul>
     <p>
-      The gradient has a large uncertainty. This means the precision could be
-      greatly improved. Despite issues with precision, the data does appear to
-      be rather accurate since the points appear consistently close to the best
-      fit gradient. There are two possible anomalies at 0.0025 and 0.003. The
-      former sits below the average trendline shown by other points and the
-      latter sits well above the trendline. Considering the error bars however,
-      both points could reasonably sit on the trendline.
+      The gradient has a reasonable, but not inconsiderable uncertainty. This
+      indicates that there are some issues with precision in this data that
+      could be improved. 
     </p>
-    <h2>Conclusion</h2>
     <p>
       In conclusion, the mass of sodium chloride in a solution is proportional
       to the inverse of its specific heat capacity.
@@ -699,82 +732,86 @@ import InlineMath from "../components/InlineMath";
       viable conclusion. However, the experiment experienced some systematic and
       random error that impacted the accuracy and precision of the data.
     </p>
-    <table>
-      <tbody
-        ><tr>
-          <th>Weakness</th>
-          <th>Significance</th>
-          <th>Improvement</th>
-        </tr>
-        <tr>
-          <td>
-            The solution in the test tube was not evenly heated since there is a
-            temperature gradient in the beaker of water that is replicated in
-            the test tube. The amount of mixing of solution was not controlled
-            and final temperature of solution was not recorded.
-          </td>
-          <td>
-            The experiment assumes an even temperature distribution across the
-            solution. This issue means that the average temperature over the
-            solution could be significantly above or below the value used
-            (90°C).
-          </td>
-          <td>
-            The conductor of experiment could control the stirring periods and
-            ensure the solution is evenly heated by moving the thermometer
-            around the solution before combining the solution and distilled
-            water in calorimeter.
-          </td>
-        </tr>
-        <tr>
-          <td>
-            The solution in the test tube sometimes had a considerable amount of
-            time out of water as it was being transferred to calorimeter.
-          </td>
-          <td>
-            Being out of the water meant that the solution could have cooled
-            down, further invalidating the 90°C value used in calculations.
-          </td>
-          <td>
-            The conductor of the experiment could move the calorimeter and hot
-            plate close together to minimise the time out of water. The
-            conductor could also consider some kind of insulation for the test
-            tube. Alternatively, a second person could measure the temperature
-            of solution before entering the water.
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Manufacturing defects or damage to the calorimeters was not examined
-            when conducting multiple trials concurrently.
-          </td>
-          <td>
-            While not visually apparent, I noticed that between trials the
-            values of specific heat capacity would also vary with the
-            calorimeter I used. This is despite the calorimeters being seemingly
-            identical. This would add some random errors in the data.
-          </td>
-          <td>
-            Do not conduct multiple trials concurrently. Only use one
-            calorimeter.
-          </td>
-        </tr>
-        <tr>
-          <td>
-            The calorimeter was cold for the first trial in each session that I
-            conducted this experiment.
-          </td>
-          <td>
-            Some thermal energy would be lost due to heating the calorimeter in
-            the first trial. This would mean the final temperature value may be
-            slightly lower for these trials.
-          </td>
-          <td>
-            Warm the calorimeter with hot water before conducting any trials.
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <figure>
+      <table>
+        <tbody
+          ><tr>
+            <th>Weakness</th>
+            <th>Significance</th>
+            <th>Improvement</th>
+          </tr>
+          <tr>
+            <td>
+              The solution in the test tube was not evenly heated since there is
+              a temperature gradient in the beaker of water that is replicated
+              in the test tube. The amount of mixing of solution was not
+              controlled and final temperature of solution was not recorded.
+            </td>
+            <td>
+              The experiment assumes an even temperature distribution across the
+              solution. This issue means that the average temperature over the
+              solution could be significantly above or below the value used
+              (90°C).
+            </td>
+            <td>
+              The conductor of experiment could control the stirring periods and
+              ensure the solution is evenly heated by moving the thermometer
+              around the solution before combining the solution and distilled
+              water in calorimeter.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              The solution in the test tube sometimes had a considerable amount
+              of time out of water as it was being transferred to calorimeter.
+            </td>
+            <td>
+              Being out of the water meant that the solution could have cooled
+              down, further invalidating the 90°C value used in calculations.
+            </td>
+            <td>
+              The conductor of the experiment could move the calorimeter and hot
+              plate close together to minimise the time out of water. The
+              conductor could also consider some kind of insulation for the test
+              tube. Alternatively, a second person could measure the temperature
+              of solution before entering the water.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Manufacturing defects or damage to the calorimeters was not
+              examined when conducting multiple trials concurrently.
+            </td>
+            <td>
+              While not visually apparent, I noticed that between trials the
+              values of specific heat capacity would also vary with the
+              calorimeter I used. This is despite the calorimeters being
+              seemingly identical. This would add some random errors in the
+              data.
+            </td>
+            <td>
+              Do not conduct multiple trials concurrently. Only use one
+              calorimeter.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              The calorimeter was cold for the first trial in each session that
+              I conducted this experiment.
+            </td>
+            <td>
+              Some thermal energy would be lost due to heating the calorimeter
+              in the first trial. This would mean the final temperature value
+              may be slightly lower for these trials.
+            </td>
+            <td>
+              Warm the calorimeter with hot water before conducting any trials.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <figcaption>Table 6: Experimental weaknesses and improvements</figcaption>
+    </figure>
     <h2>Works cited</h2>
     <p>
       Specific Heat of common Substances n.d., viewed 11 December 2022,

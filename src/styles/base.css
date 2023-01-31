@@ -50,7 +50,7 @@
     }
 
     ul,ol {
-        @apply list-outside mx-10
+        @apply list-outside mx-10 mb-5
     }
 
     ul {
@@ -78,19 +78,31 @@
     }
 
     h3 {
-        @apply font-bold text-sm
+        @apply font-bold
     }
 
     h4 {
-        @apply font-bold text-xs
+        @apply font-bold text-sm 
     }
 
     h5 {
-        @apply text-xs underline
+        @apply text-sm underline text-gray-600
     }
 
     p {
         @apply mb-5 leading-loose text-justify
+    }
+
+    figure {
+        @apply min-w-full mb-5
+    }
+
+    figure img {
+        @apply min-w-full
+    }
+
+    figure figcaption {
+        @apply text-sm text-gray-500
     }
 
     math {
