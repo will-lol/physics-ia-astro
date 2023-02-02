@@ -2,15 +2,21 @@
 import Layout from "../layouts/Layout.astro";
 import Math from "../components/Math";
 import InlineMath from "../components/InlineMath";
+import getBuildNumberAndIncrement from "../scripts/buildnumber";
+
+const buildNumber = await getBuildNumberAndIncrement();
 ---
 
 <Layout
   title="Investigating the effect that the mass of sodium chloride in water has on its specific heat capacity"
 >
+  <script define:vars={{buildNumber}}>
+    console.log(buildNumber);
+  </script>
   <main class="max-w-3xl print:w-full">
     <h1 class="text-center underline font-bold my-5">
-      Investigating the effect that the mass of sodium chloride in water has on its
-      specific heat capacity
+      Investigating the effect that the mass of sodium chloride in water has on
+      its specific heat capacity
     </h1>
     <h2>Introduction</h2>
     <p>
@@ -90,12 +96,13 @@ import InlineMath from "../components/InlineMath";
     <h3 class="text-gray-600 text-sm">Equation 2</h3>
     <Math latex={String.raw`c=\frac{Q}{m \Delta T}`} />
     <p>
-      In this experiment, a sodium chloride solution is heated and then mixed with a
-      substance of known mass and heat capacity. The energy transfer to the
-      substance of known mass and heat capacity is calculated using equation 1.
-      The mass, temperature change of sodium chloride solution and calculated energy
-      transfer is substituted into equation 2 to give the specific heat capacity
-      of the sodium chloride solution. Equation 3 represents this in a single equation.
+      In this experiment, a sodium chloride solution is heated and then mixed
+      with a substance of known mass and heat capacity. The energy transfer to
+      the substance of known mass and heat capacity is calculated using equation
+      1. The mass, temperature change of sodium chloride solution and calculated
+      energy transfer is substituted into equation 2 to give the specific heat
+      capacity of the sodium chloride solution. Equation 3 represents this in a
+      single equation.
     </p>
     <h3 class="text-gray-600 text-sm">Equation 3</h3>
     <Math
@@ -136,21 +143,20 @@ import InlineMath from "../components/InlineMath";
     <p>
       The equation states an inverse proportionality between the specific heat
       capacity of the solution and the mass of the solution, which will increase
-      as sodium chloride is added. However, this proportionality may not hold because the
-      temperature changes may not be constant. Sodium chloride has a specific
-      heat capacity of <InlineMath
+      as sodium chloride is added. However, this proportionality may not hold
+      because the temperature changes may not be constant. Sodium chloride has a
+      specific heat capacity of <InlineMath
         latex={String.raw`864 J \cdot kg^{−1} \cdot K^{−1}`}
       /> (Chase 1998). Given this value, dissolving sodium chloride in water would
-      lower its specific heat capacity. If true, a graph of mass of sodium chloride against
-      the specific heat capacity would have a negative correlation. If the inverse
-      proportionality between the specific heat capacity and mass of sodium chloride solution
-      holds true, the graph of mass of sodium chloride dissolved against the inverse of specific
-      heat capacity would have a positive, linear correlation. At the Y intercept,
-      the mass of sodium chloride in the solution would be 0, i.e. the solution would be distilled
-      water. The Y intercept on the graph is expected to be the inverse of the specific
-      heat capacity of distilled water, <InlineMath
-        latex={String.raw`4186 \cdot kg^{−1} \cdot K^{−1}`}
-      />
+      lower its specific heat capacity. If true, a graph of mass of sodium chloride
+      against the specific heat capacity would have a negative correlation. If the
+      inverse proportionality between the specific heat capacity and mass of sodium
+      chloride solution holds true, the graph of mass of sodium chloride dissolved
+      against the inverse of specific heat capacity would have a positive, linear
+      correlation. At the Y intercept, the mass of sodium chloride in the solution
+      would be 0, i.e. the solution would be distilled water. The Y intercept on
+      the graph is expected to be the inverse of the specific heat capacity of distilled
+      water, <InlineMath latex={String.raw`4186 \cdot kg^{−1} \cdot K^{−1}`} />
       (Engineering Toolbox n.d.).
     </p>
     <h2>Diagram</h2>
@@ -178,12 +184,12 @@ import InlineMath from "../components/InlineMath";
       to achieve this, I decided to place a heating element in the solution
       along with a thermometer, noting how long the solution took to reach a
       desired temperature. I started this experiment with my control trial of 0
-      sodium chloride. My method initially appeared accurate. Unfortunately, when I
-      performed by second trial using a sodium chloride solution, I discovered that the
-      solution had undergone electrolysis. Since the changed solution may have
-      different thermal properties, I decided look for other ways to find the
-      heat capacity. I considered indirectly heating the water but ruled it out
-      on the basis of difficulty with the school lab equipment.
+      sodium chloride. My method initially appeared accurate. Unfortunately,
+      when I performed by second trial using a sodium chloride solution, I
+      discovered that the solution had undergone electrolysis. Since the changed
+      solution may have different thermal properties, I decided look for other
+      ways to find the heat capacity. I considered indirectly heating the water
+      but ruled it out on the basis of difficulty with the school lab equipment.
     </p>
     <p>
       I abandoned the idea of heating solutions to find their heat capacity and
@@ -224,8 +230,8 @@ import InlineMath from "../components/InlineMath";
         combined solution.
       </li>
       <li>
-        Repeat steps 4, 6, 7, 8, 9 for different amounts of sodium chloride, including a
-        control trial with 0kg of sodium chloride.
+        Repeat steps 4, 6, 7, 8, 9 for different amounts of sodium chloride,
+        including a control trial with 0kg of sodium chloride.
       </li>
     </ol>
     <div class="border border-solid border-red-700 p-3 my-5">
@@ -243,9 +249,8 @@ import InlineMath from "../components/InlineMath";
     <h2>Variables</h2>
     <h3>Independent variable</h3>
     <p>
-      The independent variable is the mass of sodium chloride in the solution, measured in <InlineMath
-        latex={String.raw`kg`}
-      />.
+      The independent variable is the mass of sodium chloride in the solution,
+      measured in <InlineMath latex={String.raw`kg`} />.
     </p>
     <h3>Dependent variable</h3>
     <p>
@@ -374,7 +379,8 @@ import InlineMath from "../components/InlineMath";
         </tbody>
       </table>
       <figcaption>
-        Table 2: Final temperature of solution vs mass of sodium chloride in solution
+        Table 2: Final temperature of solution vs mass of sodium chloride in
+        solution
       </figcaption>
     </figure>
     <figure>
@@ -557,10 +563,9 @@ import InlineMath from "../components/InlineMath";
       water's specific heat capacity, <InlineMath
         latex={String.raw`4186 \:kg J\cdot kg^{-1}\cdot K^{-1}`}
       /> (Engineering Toolbox n.d.). We measured the temperature of the distilled
-      water before adding the sodium chloride solution and the temperature after adding the
-      sodium chloride solution, we can use these values to calculate a temperature delta, <InlineMath
-        latex={String.raw`\Delta T_{w}`}
-      />.
+      water before adding the sodium chloride solution and the temperature after
+      adding the sodium chloride solution, we can use these values to calculate a
+      temperature delta, <InlineMath latex={String.raw`\Delta T_{w}`} />.
     </p>
     <p>
       For the second component (in red), the mass of the solution (<InlineMath
@@ -660,9 +665,9 @@ import InlineMath from "../components/InlineMath";
       <figcaption>Figure 2: Graph</figcaption>
     </figure>
     <p>
-      Figure 2 shows the mass of sodium chloride against the specific heat capacity. The
-      graph is linearised according to the hypothesis. The error bars were used
-      to create min and max lines of best fit.
+      Figure 2 shows the mass of sodium chloride against the specific heat
+      capacity. The graph is linearised according to the hypothesis. The error
+      bars were used to create min and max lines of best fit.
     </p>
     <h2>Analysis and Conclusion</h2>
     <p>
@@ -676,19 +681,20 @@ import InlineMath from "../components/InlineMath";
     <p>
       When extrapolated, it would be expected that the line of best fit
       approaches the inverse of the specific heat capacity of sodium chloride as
-      the mass of sodium chloride approaches infinity. This is because the mass of salt
-      will become greater than the mass of water and eventually render the water
-      redundant. Figure 2, showing an inverse proportionality, predicts that the
-      specific heat capacity would approach 0 as the mass of sodium chloride approaches
-      infinity.
+      the mass of sodium chloride approaches infinity. This is because the mass
+      of salt will become greater than the mass of water and eventually render
+      the water redundant. Figure 2, showing an inverse proportionality,
+      predicts that the specific heat capacity would approach 0 as the mass of
+      sodium chloride approaches infinity.
     </p>
     <p>
-      Figure 2 shows a proportionality between the mass of sodium chloride and the inverse
-      of specific heat capacity, as predicted by the hypothesis. However, the
-      appearance of proportionality may be deceiving in this instance due to the
-      non-constant nature of the other variables in equation 3, as discussed in
-      the hypothesis section. It is possible that if the range of the data was
-      extended, the proportionality would not hold true due to this issue.
+      Figure 2 shows a proportionality between the mass of sodium chloride and
+      the inverse of specific heat capacity, as predicted by the hypothesis.
+      However, the appearance of proportionality may be deceiving in this
+      instance due to the non-constant nature of the other variables in equation
+      3, as discussed in the hypothesis section. It is possible that if the
+      range of the data was extended, the proportionality would not hold true
+      due to this issue.
     </p>
     <p>
       Figure 2 also features minimum and maximum lines of best fit, both of
@@ -734,9 +740,9 @@ import InlineMath from "../components/InlineMath";
       />.
     </p>
     <p>
-      The evidence gathered in this experiment supports the mass of
-      sodium chloride dissolved in distilled water being proportional to the
-      inverse of specific heat capacity of that solution.
+      The evidence gathered in this experiment supports the mass of sodium
+      chloride dissolved in distilled water being proportional to the inverse of
+      specific heat capacity of that solution.
     </p>
     <!--TODO: FINISH APPLICATIONS SECTION-->
     <p class="text-red-600">
