@@ -62,7 +62,7 @@
     }
 
     th, td {
-        @apply py-2 px-2 border border-solid border-gray-500
+        @apply py-1 px-3 border border-solid border-gray-500
     }
 
     body {

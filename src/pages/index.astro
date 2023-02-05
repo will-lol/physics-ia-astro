@@ -10,837 +10,902 @@ const buildNumber = await getBuildNumberAndIncrement();
 <Layout
   title="Investigating the effect that the mass of sodium chloride in water has on its specific heat capacity"
 >
-  <script define:vars={{buildNumber}}>
+  <script define:vars={{ buildNumber }}>
     console.log("Build " + buildNumber);
   </script>
-  <main class="max-w-3xl print:w-full">
-    <h1 class="text-center underline font-bold my-5">
-      Investigating the effect that the mass of sodium chloride in water has on
-      its specific heat capacity
-    </h1>
-    <h2>Introduction</h2>
-    <p>
-      Have you ever been told to add salt to water to help it to heat faster? Or
-      noticed that the time it takes to heat water varies with the amount of
-      water you are heating?
-    </p>
-    <p>
-      These ideas may seem basic but are the basis of this IA and the idea of
-      specific heat capacity. The heat capacity of an object is defined as the
-      amount of thermal energy required to increase that objects temperature by
-      1 K (Khan Academy 2021). However, this measurement isn't particularly
-      useful because if the amount (mass, volume or moles) of that object
-      changes, the heat capacity must be recalculated. The concept of specific
-      heat capacity is founded on the assumption that the amount of an substance
-      is directly proportional to its heat capacity. Using this assumption,
-      specific heat capacity can be defined as the amount of thermal energy
-      required to heat one amount unit (1 kilogram, 1 mole, 1 metre cubed) of a
-      substance by 1 K (Tsokos 2014). Most commonly, and throughout this IA,
-      specific heat capacity refers to the amount of thermal energy required to
-      heat 1 kg of a substance by 1 K.
-    </p>
-    <p>
-      After studying specific heat capacity in class, I found myself unsatisfied
-      with not knowing why specific heat capacity varies between substances. To
-      understand why the specific heat capacity varies between substances, it is
-      first helpful to investigate the concept of temperature. Temperature is
-      directly proportional to the average random kinetic energy within an
-      object (Tsokos 2014). Since this proportionality is so strict, it can be
-      said that any other store of energy that isn't random kinetic will
-      increase the specific heat capacity. This introduces many factors that can
-      affect specific heat capacity, such as chemical bonds. One such factor
-      that, according to Richard Feynman, is particularly important, is the
-      number of 'degrees of freedom' a given molecule has. Each degree of
-      freedom represents a parameter that is required to describe the motion of
-      a molecule (LibreTexts 2017). Only some of the energy used to heat a
-      substance will go toward degrees of freedom that increase the temperature,
-      and the number of degrees of freedom varies between molecules.
-    </p>
-    <p>
-      To investigate specific heat capacity further, I decided to explore sodium
-      chloride dissolved in water. I decided to investigate it at different
-      concentrations, which led me to my research question:
-    </p>
-    <p class="italic font-bold">
-      How does the mass of sodium chloride dissolved in water affect the
-      specific heat capacity of the solution?
-    </p>
-    <h2>Hypothesis</h2>
-    <p>
-      This experiment will involve finding the specific heat capacity of
-      different sodium chloride solutions.
-    </p>
-    <p>The specific heat capacity formula is the following:</p>
-    <h3 class="text-gray-600 text-sm">Equation 1</h3>
-    <Math
-      latex={String.raw`Q=mc \Delta T`}
-      whereList={[
-        {
-          propertyAsLatex: "Q",
-          value: "Energy in",
-          unitAsLatex: "J",
-        },
-        {
-          propertyAsLatex: "m",
-          value: "Mass of substance in",
-          unitAsLatex: "kg",
-        },
-        {
-          propertyAsLatex: "c",
-          value: "Specific heat capacity in",
-          unitAsLatex: String.raw`J\cdot kg^{-1}\cdot K^{-1}`,
-        },
-      ]}
-    />
-    <p>It can be rearranged to find the specific heat capacity:</p>
-    <h3 class="text-gray-600 text-sm">Equation 2</h3>
-    <Math latex={String.raw`c=\frac{Q}{m \Delta T}`} />
-    <p>
-      In this experiment, a sodium chloride solution is heated and then mixed
-      with a substance of known mass and heat capacity. The energy transfer to
-      the substance of known mass and heat capacity is calculated using equation
-      1. The mass, temperature change of sodium chloride solution and calculated
-      energy transfer is substituted into equation 2 to give the specific heat
-      capacity of the sodium chloride solution. Equation 3 represents this in a
-      single equation.
-    </p>
-    <h3 class="text-gray-600 text-sm">Equation 3</h3>
-    <Math
-      latex={String.raw`c_{s}\ =\ \frac{m_{w}c_{w} \Delta T_{w}}{m_{s} \Delta T_{s}}`}
-      whereList={[
-        {
-          propertyAsLatex: String.raw`c_{s}`,
-          value: "Specific heat capacity of solution in",
-          unitAsLatex: String.raw`J\cdot kg^{-1}\cdot K^{-1}`,
-        },
-        {
-          propertyAsLatex: String.raw`m_{w}`,
-          value: "Mass of substance of known specific heat capacity in",
-          unitAsLatex: String.raw`kg`,
-        },
-        {
-          propertyAsLatex: String.raw`c_{w}`,
-          value: "Specific heat capacity of known substance in ",
-          unitAsLatex: String.raw`J\cdot kg^{-1}\cdot K^{-1}`,
-        },
-        {
-          propertyAsLatex: String.raw`\Delta T_{w}`,
-          value: "Temperature change of known substance in",
-          unitAsLatex: String.raw`K`,
-        },
-        {
-          propertyAsLatex: String.raw`m_{s}`,
-          value: "Mass of sodium chloride solution in",
-          unitAsLatex: String.raw`kg`,
-        },
-        {
-          propertyAsLatex: String.raw`\Delta T_{s}`,
-          value: "Temperature change of sodium chloride solution in",
-          unitAsLatex: String.raw`K`,
-        },
-      ]}
-    />
-    <p>
-      The equation states an inverse proportionality between the specific heat
-      capacity of the solution and the mass of the solution, which will increase
-      as sodium chloride is added. However, this proportionality may not hold
-      because the temperature changes may not be constant. Sodium chloride has a
-      specific heat capacity of <InlineMath
-        latex={String.raw`864 J \cdot kg^{−1} \cdot K^{−1}`}
-      /> (Chase 1998). Given this value, dissolving sodium chloride in water would
-      lower its specific heat capacity. If true, a graph of mass of sodium chloride
-      against the specific heat capacity would have a negative correlation. If the
-      inverse proportionality between the specific heat capacity and mass of sodium
-      chloride solution holds true, the graph of mass of sodium chloride dissolved
-      against the inverse of specific heat capacity would have a positive, linear
-      correlation. At the Y intercept, the mass of sodium chloride in the solution
-      would be 0, i.e. the solution would be distilled water. The Y intercept on
-      the graph is expected to be the inverse of the specific heat capacity of distilled
-      water, <InlineMath latex={String.raw`4186 \cdot kg^{−1} \cdot K^{−1}`} />
-      (Engineering Toolbox n.d.).
-    </p>
-    <h2>Diagram</h2>
-    <figure>
-      <img src="images/diagram.svg" alt="Diagram of experiment setup" />
-      <figcaption>Figure 1: Diagram of experiment setup</figcaption>
-    </figure>
-    <h2>Apparatus</h2>
-    <ul>
-      <li>1x hot plate</li>
-      <li>1x 1000ml beaker</li>
-      <li>1x test tube</li>
-      <li>1x retort stand</li>
-      <li>1x clamp</li>
-      <li>2x analogue thermometer</li>
-      <li>1x digital thermometer</li>
-      <li>1x calorimeter</li>
-      <li>1x computer with relevant software for thermometer</li>
-      <li>0.05kg sodium chloride (table salt)</li>
-    </ul>
-    <h2>Method</h2>
-    <p>
-      Initially, I wanted to pursue an experiment that investigated specific
-      heat capacity by heating solutions rather than cooling them down. In order
-      to achieve this, I decided to place a heating element in the solution
-      along with a thermometer, noting how long the solution took to reach a
-      desired temperature. I started this experiment with my control trial of 0
-      sodium chloride. My method initially appeared accurate. Unfortunately,
-      when I performed by second trial using a sodium chloride solution, I
-      discovered that the solution had undergone electrolysis. Since the changed
-      solution may have different thermal properties, I decided look for other
-      ways to find the heat capacity. I considered indirectly heating the water
-      but ruled it out on the basis of difficulty with the school lab equipment.
-    </p>
-    <p>
-      I abandoned the idea of heating solutions to find their heat capacity and
-      began to explore cooling solutions. The below method is the one I
-      eventually decided on.
-    </p>
-    <ol>
-      <li>Record the mass of calorimeter.</li>
-      <li>
-        Fill the beaker with water so that when the test tube is filled with
-        25ml of solution and submerged in the water, the water level is above
-        that of the solution.
-      </li>
-      <li>Place the beaker on the hot plate and heat to above 90°C.</li>
-      <li>Fill calorimeter with 150ml of distilled water.</li>
-      <li>
-        Submerge the digital thermometer in the calorimeter and record the
-        temperature.
-      </li>
-      <li>
-        Dissolve <InlineMath latex={String.raw`5.00\times10^{-4}\:kg`} /> of salt
-        in 25ml of water.
-      </li>
-      <li>
-        Transfer solution into test tube and submerge test tube in water. Heat
-        to 90°C exactly.
-      </li>
-      <li>
-        Once heated, transfer solution to calorimeter quickly and start the
-        digital thermometer.
-      </li>
-      <li>
-        Record the temperature of combined solution once the thermometer
-        stabilises.
-      </li>
-      <li>
-        Record the combined final weight of solution and water. Discard the
-        combined solution.
-      </li>
-      <li>
-        Repeat steps 4, 6, 7, 8, 9 for different amounts of sodium chloride,
-        including a control trial with 0kg of sodium chloride.
-      </li>
-    </ol>
-    <div class="border border-solid border-red-700 p-3 my-5">
-      <span class="text-red-700">SAFETY PRECAUTIONS:</span>
+  <div contenteditable>
+    <main class="max-w-3xl">
+      <h1 class="text-center underline font-bold my-5">
+        Investigating the effect that the mass of sodium chloride in water has
+        on its specific heat capacity
+      </h1>
+      <h2>Introduction</h2>
+      <p>
+        Have you ever been told to add salt to the water to help it to heat faster?
+        Or noticed that the time it takes to heat water varies with the amount
+        of water you are heating?
+      </p>
+      <p>
+        These ideas may seem basic but are the basis of this IA and the idea of
+        specific heat capacity. The heat capacity of an object is defined as the
+        amount of thermal energy required to increase that object's temperature
+        by 1 K (Khan Academy 2021). However, this measurement isn't particularly
+        useful because if the amount (mass, volume or moles) of that object
+        changes, the heat capacity must be recalculated. The concept of specific
+        heat capacity is founded on the assumption that the amount of a
+        substance is directly proportional to its heat capacity. Using this
+        assumption, specific heat capacity can be defined as the amount of
+        thermal energy required to heat one amount unit (1 kilogram, 1 mole, 1
+        metre cubed) of a substance by 1 K (Tsokos 2014). Most commonly, and
+        throughout this IA, specific heat capacity refers to the amount of
+        thermal energy required to heat 1 kg of a substance by 1 K.
+      </p>
+      <p>
+        After studying specific heat capacity in class, I found myself
+        unsatisfied with not knowing why specific heat capacity varies between
+        substances. To understand why the specific heat capacity varies between
+        substances, it is first helpful to investigate the concept of
+        temperature. Temperature is directly proportional to the average random
+        kinetic energy within an object (Tsokos 2014). Since this
+        proportionality is so strict, it can be said that any other store of
+        energy that isn't random kinetic will increase the specific heat
+        capacity. This introduces many factors that can affect specific heat
+        capacity, such as chemical bonds. One such factor that, according to
+        Richard Feynman, is particularly important, is the number of 'degrees of
+        freedom' a given molecule has. Each degree of freedom represents a
+        parameter that is required to describe the motion of a molecule
+        (LibreTexts 2017). Only some of the energy used to heat a substance will
+        go toward degrees of freedom that increase the temperature, and the
+        number of degrees of freedom varies between molecules.
+      </p>
+      <p>
+        To investigate specific heat capacity further, I decided to explore
+        sodium chloride dissolved in water. I decided to investigate it at
+        different concentrations, which led me to my research question:
+      </p>
+      <p class="italic font-bold">
+        How does the mass of sodium chloride dissolved in water affect the
+        specific heat capacity of the solution?
+      </p>
+      <h2>Hypothesis</h2>
+      <p>
+        This experiment will involve finding the specific heat capacity of
+        different sodium chloride solutions.
+      </p>
+      <p>The specific heat capacity formula is the following:</p>
+      <h3 class="text-gray-600 text-sm">Equation 1</h3>
+      <Math
+        latex={String.raw`Q=mc \Delta T`}
+        whereList={[
+          {
+            propertyAsLatex: "Q",
+            value: "Energy in",
+            unitAsLatex: "J",
+          },
+          {
+            propertyAsLatex: "m",
+            value: "Mass of substance in",
+            unitAsLatex: "kg",
+          },
+          {
+            propertyAsLatex: "c",
+            value: "Specific heat capacity in",
+            unitAsLatex: String.raw`J\cdot kg^{-1}\cdot K^{-1}`,
+          },
+        ]}
+      />
+      <p>It can be rearranged to find the specific heat capacity:</p>
+      <h3 class="text-gray-600 text-sm">Equation 2</h3>
+      <Math latex={String.raw`c=\frac{Q}{m \Delta T}`} />
+      <p>
+        In this experiment, a sodium chloride solution is heated and then mixed
+        with a substance of known mass and heat capacity. The energy transfer to
+        the substance of known mass and heat capacity is calculated using
+        equation 1. The mass, temperature change of sodium chloride solution and
+        calculated energy transfer is substituted into equation 2 to give the
+        specific heat capacity of the sodium chloride solution. Equation 3
+        represents this in a single equation.
+      </p>
+      <h3 class="text-gray-600 text-sm">Equation 3</h3>
+      <Math
+        latex={String.raw`c_{s}\ =\ \frac{m_{w}c_{w} \Delta T_{w}}{m_{s} \Delta T_{s}}`}
+        whereList={[
+          {
+            propertyAsLatex: String.raw`c_{s}`,
+            value: "Specific heat capacity of solution in",
+            unitAsLatex: String.raw`J\cdot kg^{-1}\cdot K^{-1}`,
+          },
+          {
+            propertyAsLatex: String.raw`m_{w}`,
+            value: "Mass of the substance of known specific heat capacity in",
+            unitAsLatex: String.raw`kg`,
+          },
+          {
+            propertyAsLatex: String.raw`c_{w}`,
+            value: "Specific heat capacity of the known substance in ",
+            unitAsLatex: String.raw`J\cdot kg^{-1}\cdot K^{-1}`,
+          },
+          {
+            propertyAsLatex: String.raw`\Delta T_{w}`,
+            value: "Temperature change of known substance in",
+            unitAsLatex: String.raw`K`,
+          },
+          {
+            propertyAsLatex: String.raw`m_{s}`,
+            value: "Mass of sodium chloride solution in",
+            unitAsLatex: String.raw`kg`,
+          },
+          {
+            propertyAsLatex: String.raw`\Delta T_{s}`,
+            value: "Temperature change of sodium chloride solution in",
+            unitAsLatex: String.raw`K`,
+          },
+        ]}
+      />
+      <p>
+        The equation states an inverse proportionality between the specific heat
+        capacity of the solution and the mass of the solution, which will
+        increase as sodium chloride is added. However, this proportionality may
+        not hold because the temperature changes may not be constant. Sodium
+        chloride has a specific heat capacity of <InlineMath
+          latex={String.raw`864 J \cdot kg^{−1} \cdot K^{−1}`}
+        /> (Chase 1998). Given this value, dissolving sodium chloride in water would
+        lower its specific heat capacity. If true, a graph of the mass of sodium chloride
+        against the specific heat capacity would have a negative correlation. If
+        the inverse proportionality between the specific heat capacity and mass of
+        sodium chloride solution holds, the graph of the mass of sodium chloride
+        dissolved against the inverse of specific heat capacity would have a positive,
+        linear correlation. At the Y intercept, the mass of sodium chloride in the
+        solution would be 0, i.e. the solution would be distilled water. The Y-intercept
+        on the graph is expected to be the inverse of the specific heat capacity
+        of distilled water, <InlineMath
+          latex={String.raw`4186 \cdot kg^{−1} \cdot K^{−1}`}
+        />
+        (Engineering Toolbox n.d.).
+      </p>
+      <h2>Diagram</h2>
+      <figure>
+        <img src="images/diagram.svg" alt="Diagram of experiment setup" />
+        <figcaption>Figure 1: Diagram of experiment setup</figcaption>
+      </figure>
+      <h2>Apparatus</h2>
+      <ul>
+        <li>1x hot plate</li>
+        <li>1x 1000ml beaker</li>
+        <li>1x test tube</li>
+        <li>1x retort stand</li>
+        <li>1x clamp</li>
+        <li>2x analogue thermometer</li>
+        <li>1x digital thermometer</li>
+        <li>1x calorimeter</li>
+        <li>1x computer with relevant software for thermometer</li>
+        <li>0.05kg sodium chloride (table salt)</li>
+      </ul>
+      <h2>Method</h2>
+      <p>
+        Initially, I wanted to pursue an experiment that investigated specific
+        heat capacity by heating solutions rather than cooling them down. To
+        achieve this, I decided to place a heating element in the solution along
+        with a thermometer, noting how long the solution took to reach the desired
+        temperature. I started this experiment with my control trial of 0 sodium
+        chloride. My method initially appeared accurate. Unfortunately, when I
+        performed my second trial using a sodium chloride solution, I discovered
+        that the solution had undergone electrolysis. Since the changed solution
+        may have different thermal properties, I decided to look for other ways
+        to find the heat capacity. I considered indirectly heating the water but
+        ruled it out on the basis of difficulty with the school lab equipment.
+      </p>
+      <p>
+        I abandoned the idea of heating solutions to find their heat capacity
+        and began to explore cooling solutions. The below method is the one I
+        eventually decided on.
+      </p>
+      <ol>
+        <li>Record the mass of the calorimeter.</li>
+        <li>
+          Fill the beaker with water so that when the test tube is filled with
+          25ml of solution and submerged in the water, the water level is above
+          that of the solution.
+        </li>
+        <li>Place the beaker on the hot plate and heat to above 90°C.</li>
+        <li>Fill calorimeter with 150ml of distilled water.</li>
+        <li>
+          Submerge the digital thermometer in the calorimeter and record the
+          temperature.
+        </li>
+        <li>
+          Dissolve <InlineMath latex={String.raw`5.00\times10^{-4}\:kg`} /> of salt
+          in 25ml of water.
+        </li>
+        <li>
+          Transfer the solution into the test tube and submerge the test tube in water. Heat
+          to 90°C exactly.
+        </li>
+        <li>
+          Once heated, transfer the solution to the calorimeter quickly and start the
+          digital thermometer.
+        </li>
+        <li>
+          Record the temperature of the combined solution once the thermometer
+          stabilises in temperature.
+        </li>
+        <li>
+          Record the combined final weight of the solution and water. Discard the
+          combined solution.
+        </li>
+        <li>
+          Repeat steps 4, 6, 7, 8, 9 for different amounts of sodium chloride,
+          including a control trial with 0kg of sodium chloride.
+        </li>
+      </ol>
+      <div class="border border-solid border-red-700 p-3 my-5">
+        <span class="text-red-700">SAFETY PRECAUTIONS:</span>
+        <ul>
+          <li>
+            The test tube is extremely hot after it is heated to 90°C. Use
+            gloves and take care transferring the liquid.
+          </li>
+          <li>
+            The hot plate is extremely hot. Be aware of it and keep your hands
+            clear.
+          </li>
+        </ul>
+      </div>
+      <h2>Variables</h2>
+      <h3>Independent variable</h3>
+      <p>
+        The independent variable is the mass of sodium chloride in the solution,
+        measured in <InlineMath latex={String.raw`kg`} />.
+      </p>
+      <h3>Dependent variable</h3>
+      <p>
+        The dependent variable is the specific heat capacity, measured in
+        <InlineMath latex={String.raw`J\cdot kg^{-1}\cdot K^{-1}`} />
+        . The dependent variable will be calculated using measured values of temperature
+        change in equation 3.
+      </p>
+      <h3>Controlled variables</h3>
+      <figure>
+        <table class="border border-solid border-gray-500">
+          <tbody
+            ><tr>
+              <th>Variable</th>
+              <th>Action taken</th>
+            </tr>
+            <tr>
+              <td>Mass of water in calorimeter</td>
+              <td>
+                Fill the water directly within the calorimeter and measure using
+                a precise scale.
+              </td>
+            </tr>
+            <tr>
+              <td>Mass of water in solution</td>
+              <td>Measure using a precise scale.</td>
+            </tr>
+            <tr>
+              <td>Temperature of heated solution</td>
+              <td>
+                Watch the analogue thermometer carefully and stir the solution
+                often. Refill the large beaker with water when evaporation
+                causes the water level to drop.
+              </td>
+            </tr>
+            <tr>
+              <td>Thermal energy lost due to non-perfect calorimeter</td>
+              <td>
+                Use the same type of calorimeter when conducting multiple trials
+                concurrently.
+              </td>
+            </tr>
+            <tr>
+              <td>Impurities in water before adding sodium chloride</td>
+              <td>Use the same batch of distilled water for each trial.</td>
+            </tr>
+          </tbody>
+        </table>
+        <figcaption>
+          Table 1: Controlled variables and associated actions
+        </figcaption>
+      </figure>
+      <h2>Results</h2>
+      <h3>Raw data</h3>
+      <figure>
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th colspan="4"
+                ><InlineMath
+                  latex={String.raw`T_{final} \pm 0.25 \: (K)`}
+                /></th
+              >
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td
+                ><InlineMath
+                  latex={String.raw`m_{sodium chloride} \pm 1\times10^{-6} \: (kg)`}
+                /></td
+              >
+              <td>trial 1</td>
+              <td>trial 2</td>
+              <td>trial 3</td>
+              <td>average</td>
+            </tr>
+            <tr>
+              <td><InlineMath latex={String.raw`0.00\times10^{-4}`} /></td>
+              <td>302.9</td>
+              <td>303.0</td>
+              <td>303.0</td>
+              <td>302.9</td>
+            </tr>
+            <tr>
+              <td><InlineMath latex={String.raw`5.00\times10^{-4}`} /></td>
+              <td>301.8</td>
+              <td>301.6</td>
+              <td>301.9</td>
+              <td>301.7</td>
+            </tr>
+            <tr>
+              <td><InlineMath latex={String.raw`10.0\times10^{-4}`} /></td>
+              <td>302.0</td>
+              <td>302.0</td>
+              <td>301.9</td>
+              <td>301.9</td>
+            </tr>
+            <tr>
+              <td><InlineMath latex={String.raw`15.0\times10^{-4}`} /></td>
+              <td>302.4</td>
+              <td>302.5</td>
+              <td>301.8</td>
+              <td>302.2</td>
+            </tr>
+            <tr>
+              <td><InlineMath latex={String.raw`20.0\times10^{-4}`} /></td>
+              <td>303.8</td>
+              <td>303.0</td>
+              <td>303.3</td>
+              <td>303.3</td>
+            </tr>
+            <tr>
+              <td><InlineMath latex={String.raw`25.0\times10^{-4}`} /></td>
+              <td>303.2</td>
+              <td>303.5</td>
+              <td>303.7</td>
+              <td>303.5</td>
+            </tr>
+            <tr>
+              <td><InlineMath latex={String.raw`30.0\times10^{-4}`} /></td>
+              <td>302.8</td>
+              <td>303.4</td>
+              <td>303.0</td>
+              <td>303.1</td>
+            </tr>
+          </tbody>
+        </table>
+        <figcaption>
+          Table 2: Final temperature of solution vs mass of sodium chloride in
+          solution
+        </figcaption>
+      </figure>
+      <figure>
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th colspan="4"
+                ><InlineMath
+                  latex={String.raw`m_{combined\:solution} \pm 1\times10^{-5} \: (kg)`}
+                /></th
+              >
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td
+                ><InlineMath
+                  latex={String.raw`m_{sodium chloride} \pm 1\times10^{-6} \: (kg)`}
+                /></td
+              >
+              <td>trial 1</td>
+              <td>trial 2</td>
+              <td>trial 3</td>
+              <td>average</td>
+            </tr>
+            <tr>
+              <td><InlineMath latex={String.raw`0.00\times10^{-4}`} /></td>
+              <td>0.17500</td>
+              <td>0.17473</td>
+              <td>0.17210</td>
+              <td>0.17394</td>
+            </tr>
+            <tr>
+              <td><InlineMath latex={String.raw`5.00\times10^{-4}`} /></td>
+              <td>0.17309</td>
+              <td>0.17414</td>
+              <td>0.17358</td>
+              <td>0.17360</td>
+            </tr>
+            <tr>
+              <td><InlineMath latex={String.raw`10.0\times10^{-4}`} /></td>
+              <td>0.17509</td>
+              <td>0.17475</td>
+              <td>0.17466</td>
+              <td>0.17483</td>
+            </tr>
+            <tr>
+              <td><InlineMath latex={String.raw`15.0\times10^{-4}`} /></td>
+              <td>0.17562</td>
+              <td>0.17604</td>
+              <td>0.17587</td>
+              <td>0.17584</td>
+            </tr>
+            <tr>
+              <td><InlineMath latex={String.raw`20.0\times10^{-4}`} /></td>
+              <td>0.17606</td>
+              <td>0.17593</td>
+              <td>0.17601</td>
+              <td>0.17600</td>
+            </tr>
+            <tr>
+              <td><InlineMath latex={String.raw`25.0\times10^{-4}`} /></td>
+              <td>0.17669</td>
+              <td>0.17668</td>
+              <td>0.17659</td>
+              <td>0.17665</td>
+            </tr>
+            <tr>
+              <td><InlineMath latex={String.raw`30.0\times10^{-4}`} /></td>
+              <td>0.17798</td>
+              <td>0.17727</td>
+              <td>0.17689</td>
+              <td>0.17738</td>
+            </tr>
+          </tbody>
+        </table>
+        <figcaption>
+          Table 3: Final mass of combined solution and water
+        </figcaption>
+      </figure>
+      <h3>Processed data</h3>
+      <figure>
+        <table>
+          <thead>
+            <tr>
+              <th>
+                <InlineMath
+                  latex={String.raw`m_{sodium chloride} \pm 1\times10^{-6} \: (kg)`}
+                />
+              </th>
+              <th>
+                <InlineMath latex={String.raw`T_{avg} \pm 0.25 \: (K)`} />
+              </th>
+              <th>
+                <InlineMath
+                  latex={String.raw`m_{avg\:combined\:solution} \pm 1\times10^{-5} \: (kg)`}
+                />
+              </th>
+              <th>
+                <InlineMath
+                  latex={String.raw`c_{avg} \: (J\cdot kg^{-1}\cdot K^{-1})`}
+                />
+              </th>
+              <th>
+                <InlineMath
+                  latex={String.raw`\pm c_{avg} \: (J\cdot kg^{-1}\cdot K^{-1})`}
+                />
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><InlineMath latex={String.raw`0.00\times10^{-4}`} /></td>
+              <td>302.9</td>
+              <td>0.17394</td>
+              <td>4274</td>
+              <td><InlineMath latex={String.raw`1\times10^{2}`} /></td>
+            </tr>
+            <tr>
+              <td><InlineMath latex={String.raw`5.00\times10^{-4}`} /></td>
+              <td>301.7</td>
+              <td>0.17360</td>
+              <td>4196</td>
+              <td><InlineMath latex={String.raw`1\times10^{2}`} /></td>
+            </tr>
+            <tr>
+              <td><InlineMath latex={String.raw`10.0\times10^{-4}`} /></td>
+              <td>301.9</td>
+              <td>0.17483</td>
+              <td>4084</td>
+              <td><InlineMath latex={String.raw`1\times10^{2}`} /></td>
+            </tr>
+            <tr>
+              <td><InlineMath latex={String.raw`15.0\times10^{-4}`} /></td>
+              <td>302.2</td>
+              <td>0.17584</td>
+              <td>4047</td>
+              <td><InlineMath latex={String.raw`1\times10^{2}`} /></td>
+            </tr>
+            <tr>
+              <td><InlineMath latex={String.raw`20.0\times10^{-4}`} /></td>
+              <td>303.3</td>
+              <td>0.17600</td>
+              <td>3874</td>
+              <td><InlineMath latex={String.raw`1\times10^{2}`} /></td>
+            </tr>
+            <tr>
+              <td><InlineMath latex={String.raw`25.0\times10^{-4}`} /></td>
+              <td>303.5</td>
+              <td>0.17665</td>
+              <td>3839</td>
+              <td><InlineMath latex={String.raw`1\times10^{2}`} /></td>
+            </tr>
+            <tr>
+              <td><InlineMath latex={String.raw`30.0\times10^{-4}`} /></td>
+              <td>303.1</td>
+              <td>0.17738</td>
+              <td>3558</td>
+              <td><InlineMath latex={String.raw`1\times10^{2}`} /></td>
+            </tr>
+          </tbody>
+        </table>
+        <figcaption>
+          Table 4: Processed data table with calculated specific heat capacity
+        </figcaption>
+      </figure>
+      <h3>Calculation of specific heat capacity</h3>
+      <p>
+        To calculate specific heat capacity, we will use equation 3:
+      </p>
+      <Math
+        latex={String.raw`c_{s}\ =\ \frac{\textcolor{blue}{m_{w}c_{w} \Delta T_{w}}}{\textcolor{red}{m_{s} \Delta T_{s}}}`}
+      />
+      <p>
+        Equation 3 has two components, the first, in blue, is the energy
+        transferred to the distilled water that was already in the calorimeter.
+        Since we measured the mass of this water to be 150ml, we will use that
+        value for <InlineMath latex={String.raw`m_{w}`} />. For <InlineMath
+          latex={String.raw`c_{w}`}
+        />, we are using distilled water, so we will use the textbook value for
+        water's specific heat capacity, <InlineMath
+          latex={String.raw`4186 \:kg J\cdot kg^{-1}\cdot K^{-1}`}
+        /> (Engineering Toolbox n.d.). We measured the temperature of the distilled
+        water before adding the sodium chloride solution and the temperature after
+        adding the sodium chloride solution, we can use these values to calculate
+        a temperature delta, <InlineMath latex={String.raw`\Delta T_{w}`} />.
+      </p>
+      <p>
+        For the second component (in red), the mass of the solution (<InlineMath
+          latex={String.raw`m_{s}`}
+        />) is calculated by subtracting the mass of the distilled water
+        (0.15kg) from the measured mass of the combined solution. This way, any
+        solution that evaporated is accounted for. The temperature delta (<InlineMath
+          latex={String.raw`\Delta T_{s}`}
+        />) for this component is calculated similarly, except the
+        initial temperature value is 363 K since that is the temperature we
+        heated the solution to.
+      </p>
+      <h4>
+        Example calculation for sodium chloride mass of <InlineMath
+          latex={String.raw`5.00 \times 10^{-4}`}
+        />, trial 2.
+      </h4>
+      <p>On this day, the room temperature was 291.9 K.</p>
+      <Math
+        latex={String.raw`c_{s} = \frac{m_{w} c_{w} \Delta T_{w}}{m_{s} \Delta T_{s}} = \frac{0.15 \cdot 4186 \cdot (301.6-291.9)}{(0.17414-0.15) \cdot (363-301.8)} = 4122 \: \cdot kg^{−1} \cdot K^{−1}`}
+      />
+      <h3>Uncertainties</h3>
+      <figure>
+        <table>
+          <tbody
+            ><tr>
+              <th>Variable</th>
+              <th>Explanation</th>
+            </tr>
+            <tr>
+              <td>
+                <InlineMath
+                  latex={String.raw`m_{sodium chloride} \pm 1\times10^{-6} \: (kg)`}
+                />
+              </td>
+              <td>Digital scale resolution.</td>
+            </tr>
+            <tr>
+              <td>
+                <InlineMath
+                  latex={String.raw`T_{avg} \pm 2.5\times10^{-1} \: (K)`}
+                />
+              </td>
+              <td>Limitation of the digital thermometer software.</td>
+            </tr>
+            <tr>
+              <td>
+                <InlineMath
+                  latex={String.raw`m_{avg\:final\:solution} \pm 1\times10^{-5} \: (kg)`}
+                />
+              </td>
+              <td>Digital scale resolution.</td>
+            </tr>
+            <tr>
+              <td>
+                <InlineMath
+                  latex={String.raw`m_{w} \pm 1\times10^{-5} \: (kg)`}
+                />
+              </td>
+              <td> Digital scale resolution.</td>
+            </tr>
+          </tbody>
+        </table>
+        <figcaption>
+          Table 5: Uncertainties and associated explanations
+        </figcaption>
+      </figure>
+      <h4>Propagation of uncertainty of specific heat capacity</h4>
+      <p>
+        Take equation 3, <InlineMath
+          latex={String.raw`c_{s}\ =\ \frac{m_{w}c_{w} \Delta T_{w}}{m_{s} \Delta T_{s}}`}
+        /> to be <InlineMath latex={String.raw`a=\frac{bcd}{ef}`} />
+      </p>
+      <p>Uncertainty in specific heat capacity is then:</p>
+      <Math
+        latex={String.raw`\frac{\Delta a}{a} = \frac{\Delta b}{b} + \frac{\Delta c}{c} + \frac{\Delta d}{d} + \frac{\Delta e}{e} + \frac{\Delta f}{f}`}
+      />
+      <p>
+        However, c is the known value of specific heat capacity for distilled
+        water, so it does not need to be considered:
+      </p>
+      <Math
+        latex={String.raw`\frac{\Delta a}{a} = \frac{\Delta b}{b} + \frac{\Delta d}{d} + \frac{\Delta e}{e} + \frac{\Delta f}{f}`}
+      />
+      <h5>
+        Example propagation for sodium chloride mass of 0.0005kg, trial 2:
+      </h5>
+      <p>Find fractional uncertainty:</p>
+      <Math
+        latex={String.raw`\frac{0.0001}{0.15} + \frac{0.25}{301.6−291.9} + \frac{0.000002}{0.17414−0.15} + \frac{0.25}{363−301.8} = 0.0306076799`}
+      />
+      <p>Convert to absolute and round to a single significant figure:</p>
+      <Math
+        latex={String.raw`0.0306076799 \cdot 4196.310053 = 126.18 \Rightarrow 100 \: J\cdot kg^{-1}\cdot K^{-1}`}
+      />
+      <h3>Graph</h3>
+      <figure>
+        <img src="images/graph.svg" alt="Graph of data" />
+        <figcaption>Figure 2: Graph</figcaption>
+      </figure>
+      <p>
+        Figure 2 shows the mass of sodium chloride against the specific heat
+        capacity. The graph is linearised according to the hypothesis. The error
+        bars were used to create min and max lines of best fit.
+      </p>
+      <h2>Analysis and Conclusion</h2>
+      <p>
+        Figure 2 shows a positive, linear correlation. The points on the graph
+        lie close to the trendline and the trendline passes through all the
+        error bars. Some points, like the last 2, deviate further from the
+        trendline. This error does not appear to be systematic and is likely
+        random. The trendline passes through the error bars of these points, and
+        there are no other reasonable grounds to remove them.
+      </p>
+      <p>
+        When extrapolated, it would be expected that the line of best fit
+        approaches the inverse of the specific heat capacity of sodium chloride
+        as the mass of sodium chloride approaches infinity. This is because the
+        mass of salt will become greater than the mass of water and eventually
+        render the water redundant. Figure 2, showing an inverse
+        proportionality, predicts that the specific heat capacity would approach
+        0 as the mass of sodium chloride approaches infinity.
+      </p>
+      <p>
+        Figure 2 shows a proportionality between the mass of sodium chloride and
+        the inverse of specific heat capacity, as predicted by the hypothesis.
+        However, the appearance of proportionality may be deceiving in this
+        instance due to the non-constant nature of the other variables in
+        equation 3, as discussed in the hypothesis section. Due to this issue, it is possible that
+        if the range of the data was extended, the proportionality would not
+        hold.
+      </p>
+      <p>
+        Figure 2 also features minimum and maximum lines of best fit, both of
+        which pass through all the error bars. The minimum and maximum lines of
+        best fit are used to calculate uncertainty in the gradient.
+      </p>
       <ul>
         <li>
-          The test tube is extremely hot after it is heated to 90°C. Use gloves
-          and take care with the liquid.
+          Best fit gradient: <InlineMath
+            latex={String.raw`0.0142 \: J\cdot kg^{-1}\cdot K^{-1}`}
+          />
         </li>
         <li>
-          The hot plate is extremely hot. Stay aware of it and keep hands clear.
+          Min fit gradient: <InlineMath
+            latex={String.raw`0.012 \: J\cdot kg^{-1}\cdot K^{-1}`}
+          />
         </li>
+        <li>
+          Max fit gradient: <InlineMath
+            latex={String.raw`0.0164 \: J\cdot kg^{-1}\cdot K^{-1}`}
+          />
+        </li>
+        <li>
+          Gradient: <InlineMath
+            latex={String.raw`0.0142 \pm 0.0022 \: J\cdot kg^{-1}\cdot K^{-1}`}
+          />
+        </li>
+        <li>Gradient percentage uncertainty: 15.5%</li>
       </ul>
-    </div>
-    <h2>Variables</h2>
-    <h3>Independent variable</h3>
-    <p>
-      The independent variable is the mass of sodium chloride in the solution,
-      measured in <InlineMath latex={String.raw`kg`} />.
-    </p>
-    <h3>Dependent variable</h3>
-    <p>
-      The dependent variable is the specific heat capacity, measured in
-      <InlineMath latex={String.raw`J\cdot kg^{-1}\cdot K^{-1}`} />
-      . The dependent variable will be calculated using measured values of temperature
-      change in equation 3.
-    </p>
-    <h3>Controlled variables</h3>
-    <figure>
-      <table class="border border-solid border-gray-500">
-        <tbody
-          ><tr>
-            <th>Variable</th>
-            <th>Action taken</th>
-          </tr>
-          <tr>
-            <td>Mass of water in calorimeter</td>
-            <td>
-              Fill the water directly within the calorimeter and measure using a
-              precise scale.
-            </td>
-          </tr>
-          <tr>
-            <td>Mass of water in solution</td>
-            <td>Measure using a precise scale.</td>
-          </tr>
-          <tr>
-            <td>Temperature of heated solution</td>
-            <td>
-              Watch the analogue thermometer carefully and stir the solution
-              often. Refill the large beaker with water when evaporation causes
-              water level to drop.
-            </td>
-          </tr>
-          <tr>
-            <td>Thermal energy lost due to non-perfect calorimeter</td>
-            <td>
-              Use same type of calorimeter when conducting multiple trials
-              concurrently.
-            </td>
-          </tr>
-          <tr>
-            <td>Impurities in water prior to adding sodium chloride</td>
-            <td>Use the same batch of distilled water for each trial.</td>
-          </tr>
-        </tbody>
-      </table>
-      <figcaption>
-        Table 1: Controlled variables and associated actions
-      </figcaption>
-    </figure>
-    <h2>Results</h2>
-    <h3>Raw data</h3>
-    <figure>
-      <table>
-        <thead>
-          <tr>
-            <th></th>
-            <th colspan="4"
-              ><InlineMath latex={String.raw`T_{final} \pm 0.25 \: (K)`} /></th
-            >
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td
-              ><InlineMath
-                latex={String.raw`m_{sodium chloride} \pm 1\times10^{-6} \: (kg)`}
-              /></td
-            >
-            <td>trial 1</td>
-            <td>trial 2</td>
-            <td>trial 3</td>
-            <td>average</td>
-          </tr>
-          <tr>
-            <td><InlineMath latex={String.raw`0.00\times10^{-4}`} /></td>
-            <td>302.9</td>
-            <td>303.0</td>
-            <td>303.0</td>
-            <td>302.9</td>
-          </tr>
-          <tr>
-            <td><InlineMath latex={String.raw`5.00\times10^{-4}`} /></td>
-            <td>301.8</td>
-            <td>301.6</td>
-            <td>301.9</td>
-            <td>301.7</td>
-          </tr>
-          <tr>
-            <td><InlineMath latex={String.raw`10.0\times10^{-4}`} /></td>
-            <td>302.0</td>
-            <td>302.0</td>
-            <td>301.9</td>
-            <td>301.9</td>
-          </tr>
-          <tr>
-            <td><InlineMath latex={String.raw`15.0\times10^{-4}`} /></td>
-            <td>302.4</td>
-            <td>302.5</td>
-            <td>301.8</td>
-            <td>302.2</td>
-          </tr>
-          <tr>
-            <td><InlineMath latex={String.raw`20.0\times10^{-4}`} /></td>
-            <td>303.8</td>
-            <td>303.0</td>
-            <td>303.3</td>
-            <td>303.3</td>
-          </tr>
-          <tr>
-            <td><InlineMath latex={String.raw`25.0\times10^{-4}`} /></td>
-            <td>303.2</td>
-            <td>303.5</td>
-            <td>303.7</td>
-            <td>303.5</td>
-          </tr>
-          <tr>
-            <td><InlineMath latex={String.raw`30.0\times10^{-4}`} /></td>
-            <td>302.8</td>
-            <td>303.4</td>
-            <td>303.0</td>
-            <td>303.1</td>
-          </tr>
-        </tbody>
-      </table>
-      <figcaption>
-        Table 2: Final temperature of solution vs mass of sodium chloride in
-        solution
-      </figcaption>
-    </figure>
-    <figure>
-      <table>
-        <thead>
-          <tr>
-            <th></th>
-            <th colspan="4"
-              ><InlineMath
-                latex={String.raw`m_{combined\:solution} \pm 1\times10^{-5} \: (kg)`}
-              /></th
-            >
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td
-              ><InlineMath
-                latex={String.raw`m_{sodium chloride} \pm 1\times10^{-6} \: (kg)`}
-              /></td
-            >
-            <td>trial 1</td>
-            <td>trial 2</td>
-            <td>trial 3</td>
-            <td>average</td>
-          </tr>
-          <tr>
-            <td><InlineMath latex={String.raw`0.00\times10^{-4}`} /></td>
-            <td>0.17500</td>
-            <td>0.17473</td>
-            <td>0.17210</td>
-            <td>0.17394</td>
-          </tr>
-          <tr>
-            <td><InlineMath latex={String.raw`5.00\times10^{-4}`} /></td>
-            <td>0.17309</td>
-            <td>0.17414</td>
-            <td>0.17358</td>
-            <td>0.17360</td>
-          </tr>
-          <tr>
-            <td><InlineMath latex={String.raw`10.0\times10^{-4}`} /></td>
-            <td>0.17509</td>
-            <td>0.17475</td>
-            <td>0.17466</td>
-            <td>0.17483</td>
-          </tr>
-          <tr>
-            <td><InlineMath latex={String.raw`15.0\times10^{-4}`} /></td>
-            <td>0.17562</td>
-            <td>0.17604</td>
-            <td>0.17587</td>
-            <td>0.17584</td>
-          </tr>
-          <tr>
-            <td><InlineMath latex={String.raw`20.0\times10^{-4}`} /></td>
-            <td>0.17606</td>
-            <td>0.17593</td>
-            <td>0.17601</td>
-            <td>0.17600</td>
-          </tr>
-          <tr>
-            <td><InlineMath latex={String.raw`25.0\times10^{-4}`} /></td>
-            <td>0.17669</td>
-            <td>0.17668</td>
-            <td>0.17659</td>
-            <td>0.17665</td>
-          </tr>
-          <tr>
-            <td><InlineMath latex={String.raw`30.0\times10^{-4}`} /></td>
-            <td>0.17798</td>
-            <td>0.17727</td>
-            <td>0.17689</td>
-            <td>0.17738</td>
-          </tr>
-        </tbody>
-      </table>
-      <figcaption>
-        Table 3: Final mass of combined solution and water
-      </figcaption>
-    </figure>
-    <h3>Processed data</h3>
-    <figure>
-      <table>
-        <thead>
-          <tr>
-            <th>
-              <InlineMath
-                latex={String.raw`m_{sodium chloride} \pm 1\times10^{-6} \: (kg)`}
-              />
-            </th>
-            <th>
-              <InlineMath latex={String.raw`T_{avg} \pm 0.25 \: (K)`} />
-            </th>
-            <th>
-              <InlineMath
-                latex={String.raw`m_{avg\:combined\:solution} \pm 1\times10^{-5} \: (kg)`}
-              />
-            </th>
-            <th>
-              <InlineMath
-                latex={String.raw`c_{avg} \: (J\cdot kg^{-1}\cdot K^{-1})`}
-              />
-            </th>
-            <th>
-              <InlineMath
-                latex={String.raw`\pm c_{avg} \: (J\cdot kg^{-1}\cdot K^{-1})`}
-              />
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><InlineMath latex={String.raw`0.00\times10^{-4}`} /></td>
-            <td>302.9</td>
-            <td>0.17394</td>
-            <td>4274</td>
-            <td><InlineMath latex={String.raw`1\times10^{2}`} /></td>
-          </tr>
-          <tr>
-            <td><InlineMath latex={String.raw`5.00\times10^{-4}`} /></td>
-            <td>301.7</td>
-            <td>0.17360</td>
-            <td>4196</td>
-            <td><InlineMath latex={String.raw`1\times10^{2}`} /></td>
-          </tr>
-          <tr>
-            <td><InlineMath latex={String.raw`10.0\times10^{-4}`} /></td>
-            <td>301.9</td>
-            <td>0.17483</td>
-            <td>4084</td>
-            <td><InlineMath latex={String.raw`1\times10^{2}`} /></td>
-          </tr>
-          <tr>
-            <td><InlineMath latex={String.raw`15.0\times10^{-4}`} /></td>
-            <td>302.2</td>
-            <td>0.17584</td>
-            <td>4047</td>
-            <td><InlineMath latex={String.raw`1\times10^{2}`} /></td>
-          </tr>
-          <tr>
-            <td><InlineMath latex={String.raw`20.0\times10^{-4}`} /></td>
-            <td>303.3</td>
-            <td>0.17600</td>
-            <td>3874</td>
-            <td><InlineMath latex={String.raw`1\times10^{2}`} /></td>
-          </tr>
-          <tr>
-            <td><InlineMath latex={String.raw`25.0\times10^{-4}`} /></td>
-            <td>303.5</td>
-            <td>0.17665</td>
-            <td>3839</td>
-            <td><InlineMath latex={String.raw`1\times10^{2}`} /></td>
-          </tr>
-          <tr>
-            <td><InlineMath latex={String.raw`30.0\times10^{-4}`} /></td>
-            <td>303.1</td>
-            <td>0.17738</td>
-            <td>3558</td>
-            <td><InlineMath latex={String.raw`1\times10^{2}`} /></td>
-          </tr>
-        </tbody>
-      </table>
-      <figcaption>
-        Table 4: Processed data table with calculated specific heat capacity
-      </figcaption>
-    </figure>
-    <h3>Calculation of specific heat capacity</h3>
-    <p>In order to calculate specific heat capacity, we will use equation 3:</p>
-    <Math
-      latex={String.raw`c_{s}\ =\ \frac{\textcolor{blue}{m_{w}c_{w} \Delta T_{w}}}{\textcolor{red}{m_{s} \Delta T_{s}}}`}
-    />
-    <p>
-      Equation 3 has two components, the first, in blue, is the energy
-      transferred to the distilled water that was already in the calorimeter.
-      Since we measured the mass of this water to be 150ml, we will use that
-      value for <InlineMath latex={String.raw`m_{w}`} />. For <InlineMath
-        latex={String.raw`c_{w}`}
-      />, we are using distilled water, so we will use the textbook value for
-      water's specific heat capacity, <InlineMath
-        latex={String.raw`4186 \:kg J\cdot kg^{-1}\cdot K^{-1}`}
-      /> (Engineering Toolbox n.d.). We measured the temperature of the distilled
-      water before adding the sodium chloride solution and the temperature after
-      adding the sodium chloride solution, we can use these values to calculate a
-      temperature delta, <InlineMath latex={String.raw`\Delta T_{w}`} />.
-    </p>
-    <p>
-      For the second component (in red), the mass of the solution (<InlineMath
-        latex={String.raw`m_{s}`}
-      />) is calculated by subtracting the mass of the distilled water (0.15kg)
-      from the measured mass of combined solution. This way, any solution that
-      evaporated is accounted for. The temperature delta (<InlineMath
-        latex={String.raw`\Delta T_{s}`}
-      />) for this component is calculated in a similar way, except the initial
-      temperature value is 363 K since that is the temperature we heated the
-      solution to.
-    </p>
-    <h4>
-      Example calculation for sodium chloride mass of <InlineMath
-        latex={String.raw`5.00 \times 10^{-4}`}
-      />, trial 2.
-    </h4>
-    <p>On this day, the room temperature was 291.9 K.</p>
-    <Math
-      latex={String.raw`c_{s} = \frac{m_{w} c_{w} \Delta T_{w}}{m_{s} \Delta T_{s}} = \frac{0.15 \cdot 4186 \cdot (301.6-291.9)}{(0.17414-0.15) \cdot (363-301.8)} = 4122 \: \cdot kg^{−1} \cdot K^{−1}`}
-    />
-    <h3>Uncertainties</h3>
-    <figure>
-      <table>
-        <tbody
-          ><tr>
-            <th>Variable</th>
-            <th>Explanation</th>
-          </tr>
-          <tr>
-            <td>
-              <InlineMath
-                latex={String.raw`m_{sodium chloride} \pm 1\times10^{-6} \: (kg)`}
-              />
-            </td>
-            <td>Digital scale resolution.</td>
-          </tr>
-          <tr>
-            <td>
-              <InlineMath
-                latex={String.raw`T_{avg} \pm 2.5\times10^{-1} \: (K)`}
-              />
-            </td>
-            <td>Limitation of the digital thermometer software.</td>
-          </tr>
-          <tr>
-            <td>
-              <InlineMath
-                latex={String.raw`m_{avg\:final\:solution} \pm 1\times10^{-5} \: (kg)`}
-              />
-            </td>
-            <td>Digital scale resolution.</td>
-          </tr>
-          <tr>
-            <td>
-              <InlineMath
-                latex={String.raw`m_{w} \pm 1\times10^{-5} \: (kg)`}
-              />
-            </td>
-            <td> Digital scale resolution.</td>
-          </tr>
-        </tbody>
-      </table>
-      <figcaption>
-        Table 5: Uncertainties and associated explanations
-      </figcaption>
-    </figure>
-    <h4>Propagation of uncertainty of specific heat capacity</h4>
-    <p>
-      Take equation 3, <InlineMath
-        latex={String.raw`c_{s}\ =\ \frac{m_{w}c_{w} \Delta T_{w}}{m_{s} \Delta T_{s}}`}
-      /> to be <InlineMath latex={String.raw`a=\frac{bcd}{ef}`} />
-    </p>
-    <p>Uncertainty in specific heat capacity is then:</p>
-    <Math
-      latex={String.raw`\frac{\Delta a}{a} = \frac{\Delta b}{b} + \frac{\Delta c}{c} + \frac{\Delta d}{d} + \frac{\Delta e}{e} + \frac{\Delta f}{f}`}
-    />
-    <p>
-      However, c is the known value of specific heat capacity for distilled
-      water, so it does not need to be considered:
-    </p>
-    <Math
-      latex={String.raw`\frac{\Delta a}{a} = \frac{\Delta b}{b} + \frac{\Delta d}{d} + \frac{\Delta e}{e} + \frac{\Delta f}{f}`}
-    />
-    <h5>Example propagation for sodium chloride mass of 0.0005kg, trial 2:</h5>
-    <p>Find fractional uncertainty:</p>
-    <Math
-      latex={String.raw`\frac{0.0001}{0.15} + \frac{0.25}{301.6−291.9} + \frac{0.000002}{0.17414−0.15} + \frac{0.25}{363−301.8} = 0.0306076799`}
-    />
-    <p>Convert to absolute and round to a single significant figure:</p>
-    <Math
-      latex={String.raw`0.0306076799 \cdot 4196.310053 = 126.18 \Rightarrow 100 \: J\cdot kg^{-1}\cdot K^{-1}`}
-    />
-    <h3>Graph</h3>
-    <figure>
-      <img class="min-w-full" src="images/graph.svg" alt="Graph of data" />
-      <figcaption>Figure 2: Graph</figcaption>
-    </figure>
-    <p>
-      Figure 2 shows the mass of sodium chloride against the specific heat
-      capacity. The graph is linearised according to the hypothesis. The error
-      bars were used to create min and max lines of best fit.
-    </p>
-    <h2>Analysis and Conclusion</h2>
-    <p>
-      Figure 2 shows a positive, linear correlation. The points on the graph lie
-      closely to the trendline and the trendline passes through all the error
-      bars. Some points, like the last 2, deviate further from the trendline.
-      This error does not appear to be systematic and is likely random. The
-      trendline passes through the error bars of these points, and there are no
-      other reasonable grounds to remove them.
-    </p>
-    <p>
-      When extrapolated, it would be expected that the line of best fit
-      approaches the inverse of the specific heat capacity of sodium chloride as
-      the mass of sodium chloride approaches infinity. This is because the mass
-      of salt will become greater than the mass of water and eventually render
-      the water redundant. Figure 2, showing an inverse proportionality,
-      predicts that the specific heat capacity would approach 0 as the mass of
-      sodium chloride approaches infinity.
-    </p>
-    <p>
-      Figure 2 shows a proportionality between the mass of sodium chloride and
-      the inverse of specific heat capacity, as predicted by the hypothesis.
-      However, the appearance of proportionality may be deceiving in this
-      instance due to the non-constant nature of the other variables in equation
-      3, as discussed in the hypothesis section. It is possible that if the
-      range of the data was extended, the proportionality would not hold true
-      due to this issue.
-    </p>
-    <p>
-      Figure 2 also features minimum and maximum lines of best fit, both of
-      which pass through all the error bars. The minimum and maximum lines of
-      best fit are used to calculate an uncertainty in the gradient.
-    </p>
-    <ul>
-      <li>
-        Best fit gradient: <InlineMath
-          latex={String.raw`0.0142 \: J\cdot kg^{-1}\cdot K^{-1}`}
-        />
-      </li>
-      <li>
-        Min fit gradient: <InlineMath
-          latex={String.raw`0.012 \: J\cdot kg^{-1}\cdot K^{-1}`}
-        />
-      </li>
-      <li>
-        Max fit gradient: <InlineMath
-          latex={String.raw`0.0164 \: J\cdot kg^{-1}\cdot K^{-1}`}
-        />
-      </li>
-      <li>
-        Gradient: <InlineMath
-          latex={String.raw`0.0142 \pm 0.0022 \: J\cdot kg^{-1}\cdot K^{-1}`}
-        />
-      </li>
-      <li>Gradient percentage uncertainty: 15.5%</li>
-    </ul>
-    <p>
-      The gradient has a reasonable, but not inconsiderable uncertainty. This
-      indicates that there are some issues with precision in this data that
-      could be improved.
-    </p>
-    <p>
-      The accuracy of the collected data could be considered to be good since it
-      is within the expected order of magnitude based upon literature values for
-      specific heat capacity (Engineering Toolbox n.d.). The control trial of 0
-      grams of sodium chloride measured a specific heat capacity of <InlineMath
-        latex={String.raw`4274 \cdot kg^{−1} \cdot K^{−1}`}
-      />, which is within 3% of the literature value, <InlineMath
-        latex={String.raw`4186 \cdot kg^{−1} \cdot K^{−1}`}
-      />.
-    </p>
-    <p>
-      The evidence gathered in this experiment supports the mass of sodium
-      chloride dissolved in distilled water being proportional to the inverse of
-      specific heat capacity of that solution.
-    </p>
-    <!--TODO: FINISH APPLICATIONS SECTION-->
-    <p class="text-red-600">
-      Specific heat capacity and sodium chloride have applications and
-      implications. In Ocean Thermal Energy Conversion, a process where the warm
-      surface of the ocean is used to vaporise a substance of low boiling point
-      which spins a turbine. ...blah blah vlah.
-    </p>
-    <h2>Evaluation</h2>
-    <p>
-      The design and method of this investigation was suitable for reaching a
-      viable conclusion. However, the experiment experienced some systematic and
-      random error that impacted the accuracy and precision of the data.
-    </p>
-    <figure>
-      <table>
-        <tbody
-          ><tr>
-            <th>Weakness</th>
-            <th>Significance</th>
-            <th>Improvement</th>
-          </tr>
-          <tr>
-            <td>
-              The solution in the test tube was not evenly heated since there is
-              a temperature gradient in the beaker of water that is replicated
-              in the test tube. The amount of mixing of solution was not
-              controlled and final temperature of solution was not recorded.
-            </td>
-            <td>
-              The experiment assumes an even temperature distribution across the
-              solution. This issue means that the average temperature over the
-              solution could be significantly above or below the value used
-              (90°C).
-            </td>
-            <td>
-              The conductor of experiment could control the stirring periods and
-              ensure the solution is evenly heated by moving the thermometer
-              around the solution before combining the solution and distilled
-              water in calorimeter.
-            </td>
-          </tr>
-          <tr>
-            <td>
-              The solution in the test tube sometimes had a considerable amount
-              of time out of water as it was being transferred to calorimeter.
-            </td>
-            <td>
-              Being out of the water meant that the solution could have cooled
-              down, further invalidating the 90°C value used in calculations.
-            </td>
-            <td>
-              The conductor of the experiment could move the calorimeter and hot
-              plate close together to minimise the time out of water. The
-              conductor could also consider some kind of insulation for the test
-              tube. Alternatively, a second person could measure the temperature
-              of solution before entering the water.
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Manufacturing defects or damage to the calorimeters was not
-              examined when conducting multiple trials concurrently.
-            </td>
-            <td>
-              While not visually apparent, I noticed that between trials the
-              values of specific heat capacity would also vary with the
-              calorimeter I used. This is despite the calorimeters being
-              seemingly identical. This would add some random errors in the
-              data.
-            </td>
-            <td>
-              Do not conduct multiple trials concurrently. Only use one
-              calorimeter.
-            </td>
-          </tr>
-          <tr>
-            <td>
-              The calorimeter was cold for the first trial in each session that
-              I conducted this experiment.
-            </td>
-            <td>
-              Some thermal energy would be lost due to heating the calorimeter
-              in the first trial. This would mean the final temperature value
-              may be slightly lower for these trials.
-            </td>
-            <td>
-              Warm the calorimeter with hot water before conducting any trials.
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <figcaption>Table 6: Experimental weaknesses and improvements</figcaption>
-    </figure>
-    <h2>Works cited</h2>
-    <p>
-      Specific Heat of common Substances n.d., viewed 11 December 2022,
-      &lthttps://www.engineeringtoolbox.com/specific-heat-capacity-d_391.html&gt.
-    </p>
-  </main>
+      <p>
+        The gradient has a reasonable, but not inconsiderable uncertainty. This
+        indicates that there are some issues with precision in this data that
+        could be improved.
+      </p>
+      <p>
+        The accuracy of the collected data could be considered to be good since
+        it is within the expected order of magnitude based on literature values
+        for specific heat capacity (Engineering Toolbox n.d.). The control trial
+        of 0 grams of sodium chloride measured a specific heat capacity of <InlineMath
+          latex={String.raw`4274 \cdot kg^{−1} \cdot K^{−1}`}
+        />, which is within 3% of the literature value, <InlineMath
+          latex={String.raw`4186 \cdot kg^{−1} \cdot K^{−1}`}
+        />.
+      </p>
+      <p>
+        The evidence gathered in this experiment supports the mass of sodium
+        chloride dissolved in distilled water being proportional to the inverse
+        of specific heat capacity of that solution.
+      </p>
+      <!--TODO: FINISH APPLICATIONS SECTION-->
+      <p>
+        Specific heat capacity and sodium chloride have applications and
+        implications. Ocean Thermal Energy Conversion is a process where the
+        warm surface of the ocean is used to vaporise a substance of low boiling
+        point which spins a turbine (Lynn et al. 2018). Ocean Thermal Energy
+        Conversion is currently a process with only 3-5% efficiency, so there is
+        potential for great improvements. It was found in a 2018 study that as
+        the specific heat capacity of the water decreased due to salt content,
+        the amount of electricity generated per unit temperature decreased in
+        these systems.
+      </p>
+      <h2>Evaluation</h2>
+      <p>
+        The design and method of this investigation were suitable for reaching a
+        viable conclusion. However, the experiment experienced some systematic
+        and random error that impacted the accuracy and precision of the data.
+      </p>
+      <div class="break-after-page"></div>
+      <figure>
+        <table>
+          <tbody
+            ><tr>
+              <th>Weakness</th>
+              <th>Significance</th>
+              <th>Improvement</th>
+            </tr>
+            <tr>
+              <td>
+                The solution in the test tube was not evenly heated since there
+                is a temperature gradient in the beaker of water that is
+                replicated in the test tube. The amount of mixing of the solution
+                was not controlled and the final temperature of the solution was not
+                recorded.
+              </td>
+              <td>
+                The experiment assumes an even temperature distribution across
+                the solution. This issue means that the average temperature over
+                the solution could be significantly above or below the value
+                used (90°C).
+              </td>
+              <td>
+                The conductor of the experiment could control the stirring
+                periods and ensure the solution is evenly heated by moving the
+                thermometer around the solution before combining the solution
+                and distilled water in the calorimeter.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                The solution in the test tube sometimes had a considerable
+                amount of time out of the water as it was being transferred to
+                calorimeter.
+              </td>
+              <td>
+                Being out of the water meant that the solution could have cooled
+                down, further invalidating the 90°C value used in calculations.
+              </td>
+              <td>
+                The conductor of the experiment could move the calorimeter and
+                hot plate closer together to minimise the time out of water. The
+                conductor could also consider some kind of insulation for the
+                test tube. 
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Manufacturing defects or damage to the calorimeters was not
+                examined when conducting multiple trials concurrently.
+              </td>
+              <td>
+                While not visually apparent, I noticed that between trials the
+                values of specific heat capacity would also vary with the
+                calorimeter I used. This is despite the calorimeters being
+                seemingly identical. This would add some random errors in the
+                data.
+              </td>
+              <td>
+                Do not conduct multiple trials concurrently. Only use one
+                calorimeter.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                The calorimeter was cold for the first trial in each session I
+                conducted this experiment.
+              </td>
+              <td>
+                Some thermal energy would be lost due to heating the calorimeter
+                in the first trial. This would mean the final temperature value
+                may be slightly lower for these trials.
+              </td>
+              <td>
+                Warm the calorimeter with hot water before conducting any
+                trials.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <figcaption>
+          Table 6: Experimental weaknesses and improvements
+        </figcaption>
+      </figure>
+      <div class="break-after-page"></div>
+      <h2>Works Cited</h2>
+      <p>
+        Chase, MW 1998, “NIST-JANAF Themochemical Tables, Fourth Edition,” , pp.
+        1–1951.
+      </p>
+      <p>
+        Engineering Toolbox n.d., <i>Specific Heat of common Substances</i>,
+        viewed 11 December 2022, &lt;<a
+          href="https://www.engineeringtoolbox.com/specific-heat-capacity-d_391.html"
+          >https://www.engineeringtoolbox.com/specific-heat-capacity-d_391.html</a
+        >&gt;.
+      </p>
+      <p>
+        <i>Introduction to Vibrations</i> 2017, <i>Chemistry LibreTexts</i>,
+        viewed 28 January 2023, &lt;<a
+          href="https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Supplemental_Modules_(Physical_and_Theoretical_Chemistry)/Spectroscopy/Vibrational_Spectroscopy/Vibrational_Modes/Introduction_to_Vibrations"
+          >https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Supplemental_Modules_(Physical_and_Theoretical_Chemistry)/Spectroscopy/Vibrational_Spectroscopy/Vibrational_Modes/Introduction_to_Vibrations</a
+        >&gt;.
+      </p>
+      <p>
+        Khan Academy 2021, <i
+          >Heat capacity (video) | Thermodynamics | Khan Academy</i
+        >, viewed 28 January 2023, &lt;<a
+          href="https://www.khanacademy.org/_render"
+          >https://www.khanacademy.org/_render</a
+        >&gt;.
+      </p>
+      <p>
+        Lynn, B, Medved, A, &amp; Griggs, T 2018, “A comparative analysis on the
+        impact of salinity on the heat generation of OTEC plants to determine
+        the most plausible geographical location,” <i
+          >PAM Review Energy Science &amp; Technology</i
+        >, vol. 5, pp. 119–130.
+      </p>
+      <p>
+        Richard, F n.d., <i
+          >The Feynman Lectures on Physics Vol. I Ch. 40: The Principles of
+          Statistical Mechanics</i
+        >, viewed 28 January 2023, &lt;<a
+          href="https://www.feynmanlectures.caltech.edu/I_40.html"
+          >https://www.feynmanlectures.caltech.edu/I_40.html</a
+        >&gt;.
+      </p>
+      <p>
+        Tsokos, KA 2014, <i>Physics for the IB Diploma</i>, Sixth edition,
+        Cambridge University Press, Cambridge.
+      </p>
+    </main>
+  </div>
 </Layout>
