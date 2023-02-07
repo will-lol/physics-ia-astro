@@ -21,9 +21,9 @@ const buildNumber = await getBuildNumberAndIncrement();
       </h1>
       <h2>Introduction</h2>
       <p>
-        Have you ever been told to add salt to the water to help it to heat faster?
-        Or noticed that the time it takes to heat water varies with the amount
-        of water you are heating?
+        Have you ever been told to add salt to the water to help it to heat
+        faster? Or noticed that the time it takes to heat water varies with the
+        amount of water you are heating?
       </p>
       <p>
         These ideas may seem basic but are the basis of this IA and the idea of
@@ -67,7 +67,6 @@ const buildNumber = await getBuildNumberAndIncrement();
         How does the mass of sodium chloride dissolved in water affect the
         specific heat capacity of the solution?
       </p>
-      <h2>Hypothesis</h2>
       <p>
         This experiment will involve finding the specific heat capacity of
         different sodium chloride solutions.
@@ -142,26 +141,30 @@ const buildNumber = await getBuildNumberAndIncrement();
           },
         ]}
       />
+      <h2>Hypothesis</h2>
       <p>
-        The equation states an inverse proportionality between the specific heat
-        capacity of the solution and the mass of the solution, which will
-        increase as sodium chloride is added. However, this proportionality may
-        not hold because the temperature changes may not be constant. Sodium
-        chloride has a specific heat capacity of <InlineMath
+        Equation 3 states an inverse proportionality between the specific heat
+        capacity of the solution and the mass of the solution. However, this
+        proportionality is invalid. A proportionality derived from an equation
+        must be able to be represented as a linear function, where all other
+        variables are distilled into a gradient constant. The other variables in
+        this equation are expected to not be constant, so proportionality cannot
+        be assumed.
+      </p>
+      <p>
+        Sodium chloride has a specific heat capacity of <InlineMath
           latex={String.raw`864 J \cdot kg^{−1} \cdot K^{−1}`}
-        /> (Chase 1998). Given this value, dissolving sodium chloride in water would
-        lower its specific heat capacity. If true, a graph of the mass of sodium chloride
-        against the specific heat capacity would have a negative correlation. If
-        the inverse proportionality between the specific heat capacity and mass of
-        sodium chloride solution holds, the graph of the mass of sodium chloride
-        dissolved against the inverse of specific heat capacity would have a positive,
-        linear correlation. At the Y intercept, the mass of sodium chloride in the
-        solution would be 0, i.e. the solution would be distilled water. The Y-intercept
-        on the graph is expected to be the inverse of the specific heat capacity
-        of distilled water, <InlineMath
-          latex={String.raw`4186 \cdot kg^{−1} \cdot K^{−1}`}
-        />
-        (Engineering Toolbox n.d.).
+        /> (Chase 1998). Given this value, it is clear that dissolving sodium chloride
+        in water would lower its specific heat capacity. The proportionality between
+        the mass of sodium chloride and water would not be direct since the Y-intercept
+        is expected to be the specific heat capacity of water, <InlineMath
+          latex={String.raw`4186 J \cdot kg^{−1} \cdot K^{−1}`}
+        /> (Engineering Toolbox n.d.). It is difficult to predict the type of correlation
+        that exists between the two variables since no known equation accurately
+        relates the two with a constant. The domain of this graph would be from 0
+        kilograms to the saturation point for water and salt. Beyond the saturation
+        point, we may reasonably assume different behaviour since the material is
+        no longer a liquid and will have different properties.
       </p>
       <h2>Diagram</h2>
       <figure>
@@ -186,14 +189,15 @@ const buildNumber = await getBuildNumberAndIncrement();
         Initially, I wanted to pursue an experiment that investigated specific
         heat capacity by heating solutions rather than cooling them down. To
         achieve this, I decided to place a heating element in the solution along
-        with a thermometer, noting how long the solution took to reach the desired
-        temperature. I started this experiment with my control trial of 0 sodium
-        chloride. My method initially appeared accurate. Unfortunately, when I
-        performed my second trial using a sodium chloride solution, I discovered
-        that the solution had undergone electrolysis. Since the changed solution
-        may have different thermal properties, I decided to look for other ways
-        to find the heat capacity. I considered indirectly heating the water but
-        ruled it out on the basis of difficulty with the school lab equipment.
+        with a thermometer, noting how long the solution took to reach the
+        desired temperature. I started this experiment with my control trial of
+        0 sodium chloride. My method initially appeared accurate. Unfortunately,
+        when I performed my second trial using a sodium chloride solution, I
+        discovered that the solution had undergone electrolysis. Since the
+        changed solution may have different thermal properties, I decided to
+        look for other ways to find the heat capacity. I considered indirectly
+        heating the water but ruled it out on the basis of difficulty with the
+        school lab equipment.
       </p>
       <p>
         I abandoned the idea of heating solutions to find their heat capacity
@@ -218,20 +222,20 @@ const buildNumber = await getBuildNumberAndIncrement();
           in 25ml of water.
         </li>
         <li>
-          Transfer the solution into the test tube and submerge the test tube in water. Heat
-          to 90°C exactly.
+          Transfer the solution into the test tube and submerge the test tube in
+          water. Heat to 90°C exactly.
         </li>
         <li>
-          Once heated, transfer the solution to the calorimeter quickly and start the
-          digital thermometer.
+          Once heated, transfer the solution to the calorimeter quickly and
+          start the digital thermometer.
         </li>
         <li>
           Record the temperature of the combined solution once the thermometer
           stabilises in temperature.
         </li>
         <li>
-          Record the combined final weight of the solution and water. Discard the
-          combined solution.
+          Record the combined final weight of the solution and water. Discard
+          the combined solution.
         </li>
         <li>
           Repeat steps 4, 6, 7, 8, 9 for different amounts of sodium chloride,
@@ -326,7 +330,7 @@ const buildNumber = await getBuildNumberAndIncrement();
             <tr>
               <td
                 ><InlineMath
-                  latex={String.raw`m_{sodium chloride} \pm 1\times10^{-6} \: (kg)`}
+                  latex={String.raw`m_{sodium \: chloride} \pm 1\times10^{-6} \: (kg)`}
                 /></td
               >
               <td>trial 1</td>
@@ -406,7 +410,7 @@ const buildNumber = await getBuildNumberAndIncrement();
             <tr>
               <td
                 ><InlineMath
-                  latex={String.raw`m_{sodium chloride} \pm 1\times10^{-6} \: (kg)`}
+                  latex={String.raw`m_{sodium \: chloride} \pm 1\times10^{-6} \: (kg)`}
                 /></td
               >
               <td>trial 1</td>
@@ -476,7 +480,7 @@ const buildNumber = await getBuildNumberAndIncrement();
             <tr>
               <th>
                 <InlineMath
-                  latex={String.raw`m_{sodium chloride} \pm 1\times10^{-6} \: (kg)`}
+                  latex={String.raw`m_{sodium \: chloride} \pm 1\times10^{-6} \: (kg)`}
                 />
               </th>
               <th>
@@ -504,49 +508,49 @@ const buildNumber = await getBuildNumberAndIncrement();
               <td><InlineMath latex={String.raw`0.00\times10^{-4}`} /></td>
               <td>302.9</td>
               <td>0.17394</td>
-              <td>4274</td>
+              <td><InlineMath latex={String.raw`4.27\times10^{3}`} /></td>
               <td><InlineMath latex={String.raw`1\times10^{2}`} /></td>
             </tr>
             <tr>
               <td><InlineMath latex={String.raw`5.00\times10^{-4}`} /></td>
               <td>301.7</td>
               <td>0.17360</td>
-              <td>4196</td>
+              <td><InlineMath latex={String.raw`4.20\times10^{3}`} /></td>
               <td><InlineMath latex={String.raw`1\times10^{2}`} /></td>
             </tr>
             <tr>
               <td><InlineMath latex={String.raw`10.0\times10^{-4}`} /></td>
               <td>301.9</td>
               <td>0.17483</td>
-              <td>4084</td>
+              <td><InlineMath latex={String.raw`4.08\times10^{3}`} /></td>
               <td><InlineMath latex={String.raw`1\times10^{2}`} /></td>
             </tr>
             <tr>
               <td><InlineMath latex={String.raw`15.0\times10^{-4}`} /></td>
               <td>302.2</td>
               <td>0.17584</td>
-              <td>4047</td>
+              <td><InlineMath latex={String.raw`4.05\times10^{3}`} /></td>
               <td><InlineMath latex={String.raw`1\times10^{2}`} /></td>
             </tr>
             <tr>
               <td><InlineMath latex={String.raw`20.0\times10^{-4}`} /></td>
               <td>303.3</td>
               <td>0.17600</td>
-              <td>3874</td>
+              <td><InlineMath latex={String.raw`3.87\times10^{3}`} /></td>
               <td><InlineMath latex={String.raw`1\times10^{2}`} /></td>
             </tr>
             <tr>
               <td><InlineMath latex={String.raw`25.0\times10^{-4}`} /></td>
               <td>303.5</td>
               <td>0.17665</td>
-              <td>3839</td>
+              <td><InlineMath latex={String.raw`3.84\times10^{3}`} /></td>
               <td><InlineMath latex={String.raw`1\times10^{2}`} /></td>
             </tr>
             <tr>
               <td><InlineMath latex={String.raw`30.0\times10^{-4}`} /></td>
               <td>303.1</td>
               <td>0.17738</td>
-              <td>3558</td>
+              <td><InlineMath latex={String.raw`3.56\times10^{3}`} /></td>
               <td><InlineMath latex={String.raw`1\times10^{2}`} /></td>
             </tr>
           </tbody>
@@ -556,9 +560,7 @@ const buildNumber = await getBuildNumberAndIncrement();
         </figcaption>
       </figure>
       <h3>Calculation of specific heat capacity</h3>
-      <p>
-        To calculate specific heat capacity, we will use equation 3:
-      </p>
+      <p>To calculate specific heat capacity, we will use equation 3:</p>
       <Math
         latex={String.raw`c_{s}\ =\ \frac{\textcolor{blue}{m_{w}c_{w} \Delta T_{w}}}{\textcolor{red}{m_{s} \Delta T_{s}}}`}
       />
@@ -583,9 +585,9 @@ const buildNumber = await getBuildNumberAndIncrement();
         (0.15kg) from the measured mass of the combined solution. This way, any
         solution that evaporated is accounted for. The temperature delta (<InlineMath
           latex={String.raw`\Delta T_{s}`}
-        />) for this component is calculated similarly, except the
-        initial temperature value is 363 K since that is the temperature we
-        heated the solution to.
+        />) for this component is calculated similarly, except the initial
+        temperature value is 363 K since that is the temperature we heated the
+        solution to.
       </p>
       <h4>
         Example calculation for sodium chloride mass of <InlineMath
@@ -594,7 +596,7 @@ const buildNumber = await getBuildNumberAndIncrement();
       </h4>
       <p>On this day, the room temperature was 291.9 K.</p>
       <Math
-        latex={String.raw`c_{s} = \frac{m_{w} c_{w} \Delta T_{w}}{m_{s} \Delta T_{s}} = \frac{0.15 \cdot 4186 \cdot (301.6-291.9)}{(0.17414-0.15) \cdot (363-301.8)} = 4122 \: \cdot kg^{−1} \cdot K^{−1}`}
+        latex={String.raw`c_{s} = \frac{m_{w} c_{w} \Delta T_{w}}{m_{s} \Delta T_{s}} = \frac{0.15000 \cdot 4186 \cdot (301.6-291.9)}{(0.17414-0.15000) \cdot (363.0-301.8)} = 4122 \: \cdot kg^{−1} \cdot K^{−1}`}
       />
       <h3>Uncertainties</h3>
       <figure>
@@ -607,7 +609,7 @@ const buildNumber = await getBuildNumberAndIncrement();
             <tr>
               <td>
                 <InlineMath
-                  latex={String.raw`m_{sodium chloride} \pm 1\times10^{-6} \: (kg)`}
+                  latex={String.raw`m_{sodium \: chloride} \pm 1\times10^{-6} \: (kg)`}
                 />
               </td>
               <td>Digital scale resolution.</td>
@@ -664,7 +666,7 @@ const buildNumber = await getBuildNumberAndIncrement();
       </h5>
       <p>Find fractional uncertainty:</p>
       <Math
-        latex={String.raw`\frac{0.0001}{0.15} + \frac{0.25}{301.6−291.9} + \frac{0.000002}{0.17414−0.15} + \frac{0.25}{363−301.8} = 0.0306076799`}
+        latex={String.raw`\frac{0.0001}{0.15} + \frac{0.25}{301.6−291.9} + \frac{0.000002}{0.17414−0.15} + \frac{0.25}{363.0−301.8} = 0.0306076799`}
       />
       <p>Convert to absolute and round to a single significant figure:</p>
       <Math
@@ -673,16 +675,85 @@ const buildNumber = await getBuildNumberAndIncrement();
       <h3>Graph</h3>
       <figure>
         <img src="images/graph.svg" alt="Graph of data" />
-        <figcaption>Figure 2: Graph</figcaption>
+        <figcaption>
+          Figure 2: Graph of sodium chloride against specific heat capacity.
+        </figcaption>
       </figure>
-      <p>
-        Figure 2 shows the mass of sodium chloride against the specific heat
-        capacity. The graph is linearised according to the hypothesis. The error
-        bars were used to create min and max lines of best fit.
-      </p>
       <h2>Analysis and Conclusion</h2>
       <p>
-        Figure 2 shows a positive, linear correlation. The points on the graph
+        Figure 2 is fitted with a linear line of best fit. No linearisation was
+        used because a theoretical proportionality was not determined, and the
+        linear line of best fit appears to sufficiently model the data.
+      </p>
+      <p>
+        There are some issues with using a linear line of best fit. As discussed
+        in the hypothesis section, the domain of the line of best fit would be
+        from 0 to the maximum concentration of sodium chloride in water. The
+        maximum mass of sodium chloride dissolved in water at 25°C is 0.009 kg
+        (Engineering Toolbox n.d). When extrapolated, the graph does not predict
+        an unreasonable result for 0.009 kg of sodium chloride dissolved.
+      </p>
+      <div class="grid grid-cols-2">
+        <ul>
+          <li>
+            Best fit gradient: <InlineMath
+              latex={String.raw`-219495 \: J\cdot kg^{-1}\cdot K^{-1}`}
+            />
+          </li>
+          <li>
+            Min fit gradient: <InlineMath
+              latex={String.raw`-157679 \: J\cdot kg^{-1}\cdot K^{-1}`}
+            />
+          </li>
+          <li>
+            Max fit gradient: <InlineMath
+              latex={String.raw`-319731 \: J\cdot kg^{-1}\cdot K^{-1}`}
+            />
+          </li>
+          <li>
+            Gradient: <InlineMath
+              latex={String.raw`-219495 \pm 81026 \: J\cdot kg^{-1}\cdot K^{-1}`}
+            />
+          </li>
+          <li>Gradient percentage uncertainty: 36.915%</li>
+        </ul>
+        <ul>
+          <li>
+            Best fit Y-intercept: <InlineMath
+              latex={String.raw`4311.1 \: J\cdot kg^{-1}\cdot K^{-1}`}
+            />
+          </li>
+          <li>
+            Min fit Y-intercept: <InlineMath
+              latex={String.raw`4144.2 \: J\cdot kg^{-1}\cdot K^{-1}`}
+            />
+          </li>
+          <li>
+            Max fit Y-intercept: <InlineMath
+              latex={String.raw`4404.6 \: J\cdot kg^{-1}\cdot K^{-1}`}
+            />
+          </li>
+          <li>
+            Y-intercept: <InlineMath
+              latex={String.raw`4311.1 \pm 105.2 \: J\cdot kg^{-1}\cdot K^{-1}`}
+            />
+          </li>
+          <li>Y-intercept percentage uncertainty: 2.440%</li>
+        </ul>
+      </div>
+      <p>
+        The Y-intercept of the line of best fit represents the specific heat
+        capacity of distilled water. The expected Y-intercept is <InlineMath
+          latex={String.raw`4186 \: J\cdot kg^{-1}\cdot K^{-1}`}
+        />, so our Y-intercept is relatively accurate.
+      </p>
+      <p>
+        The gradient of the line of best fit has the units <InlineMath
+        latex={String.raw`J\cdot kg^{-1}\cdot K^{-1} \cdot kg^{-1}`}
+      />. This is the specific heat capacity per kilogram of salt.
+      </p>
+      <p>
+        Figure 2 shows a negative, linear correlation. The points on the graph
         lie close to the trendline and the trendline passes through all the
         error bars. Some points, like the last 2, deviate further from the
         trendline. This error does not appear to be systematic and is likely
@@ -690,51 +761,10 @@ const buildNumber = await getBuildNumberAndIncrement();
         there are no other reasonable grounds to remove them.
       </p>
       <p>
-        When extrapolated, it would be expected that the line of best fit
-        approaches the inverse of the specific heat capacity of sodium chloride
-        as the mass of sodium chloride approaches infinity. This is because the
-        mass of salt will become greater than the mass of salt and eventually
-        render the water redundant. Figure 2, showing an inverse
-        proportionality, predicts that the specific heat capacity would approach
-        0 as the mass of sodium chloride approaches infinity.
-      </p>
-      <p>
-        Figure 2 shows a proportionality between the mass of sodium chloride and
-        the inverse of specific heat capacity, as predicted by the hypothesis.
-        However, the appearance of proportionality may be deceiving in this
-        instance due to the non-constant nature of the other variables in
-        equation 3, as discussed in the hypothesis section. Due to this issue, it is possible that
-        if the range of the data was extended, the proportionality would not
-        hold.
-      </p>
-      <p>
         Figure 2 also features minimum and maximum lines of best fit, both of
         which pass through all the error bars. The minimum and maximum lines of
         best fit are used to calculate uncertainty in the gradient.
       </p>
-      <ul>
-        <li>
-          Best fit gradient: <InlineMath
-            latex={String.raw`0.0142 \: J\cdot kg^{-1}\cdot K^{-1}`}
-          />
-        </li>
-        <li>
-          Min fit gradient: <InlineMath
-            latex={String.raw`0.012 \: J\cdot kg^{-1}\cdot K^{-1}`}
-          />
-        </li>
-        <li>
-          Max fit gradient: <InlineMath
-            latex={String.raw`0.0164 \: J\cdot kg^{-1}\cdot K^{-1}`}
-          />
-        </li>
-        <li>
-          Gradient: <InlineMath
-            latex={String.raw`0.0142 \pm 0.0022 \: J\cdot kg^{-1}\cdot K^{-1}`}
-          />
-        </li>
-        <li>Gradient percentage uncertainty: 15.5%</li>
-      </ul>
       <p>
         The gradient has a reasonable, but not inconsiderable uncertainty. This
         indicates that there are some issues with precision in this data that
@@ -755,7 +785,6 @@ const buildNumber = await getBuildNumberAndIncrement();
         chloride dissolved in distilled water being proportional to the inverse
         of specific heat capacity of that solution.
       </p>
-      <!--TODO: FINISH APPLICATIONS SECTION-->
       <p>
         Specific heat capacity and sodium chloride have applications and
         implications. Ocean Thermal Energy Conversion is a process where the
@@ -786,9 +815,9 @@ const buildNumber = await getBuildNumberAndIncrement();
               <td>
                 The solution in the test tube was not evenly heated since there
                 is a temperature gradient in the beaker of water that is
-                replicated in the test tube. The amount of mixing of the solution
-                was not controlled and the final temperature of the solution was not
-                recorded.
+                replicated in the test tube. The amount of mixing of the
+                solution was not controlled and the final temperature of the
+                solution was not recorded.
               </td>
               <td>
                 The experiment assumes an even temperature distribution across
@@ -817,7 +846,7 @@ const buildNumber = await getBuildNumberAndIncrement();
                 The conductor of the experiment could move the calorimeter and
                 hot plate closer together to minimise the time out of water. The
                 conductor could also consider some kind of insulation for the
-                test tube. 
+                test tube.
               </td>
             </tr>
             <tr>
