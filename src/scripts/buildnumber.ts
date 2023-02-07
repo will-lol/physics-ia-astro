@@ -7,7 +7,7 @@ export default async function getBuildNumberAndIncrement(): Promise<string | und
         try {
           buildNumber = await readFile(filePath, { encoding: "utf8" });
         } catch {
-          buildNumber = await fetch("../../public/buildnumber").then((res) => {res.json()});
+          buildNumber = await fetch("buildnumber").then((res) => {res.json()});
         }
 
         writeFile(filePath, (parseInt(buildNumber) + 1).toString())
