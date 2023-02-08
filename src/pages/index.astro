@@ -748,6 +748,11 @@ const buildNumber = await getBuildNumberAndIncrement();
           latex={String.raw`4186 \: J\cdot kg^{-1}\cdot K^{-1}`}
         />, so our Y-intercept is relatively accurate.
       </p>
+            <p>
+        The gradient has a reasonable, but not inconsiderable uncertainty. This
+        indicates that there are some issues with precision in this data that
+        could be improved.
+      </p>
       <p>
         The gradient of the line of best fit has the units <InlineMath
         latex={String.raw`J\cdot kg^{-1}\cdot K^{-1} \cdot kg^{-1}`}
@@ -765,11 +770,6 @@ const buildNumber = await getBuildNumberAndIncrement();
         Figure 2 also features minimum and maximum lines of best fit, both of
         which pass through all the error bars. The minimum and maximum lines of
         best fit are used to calculate uncertainty in the gradient.
-      </p>
-      <p>
-        The gradient has a reasonable, but not inconsiderable uncertainty. This
-        indicates that there are some issues with precision in this data that
-        could be improved.
       </p>
       <p>
         The accuracy of the collected data could be considered to be good since
