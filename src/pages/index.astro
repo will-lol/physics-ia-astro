@@ -60,8 +60,8 @@ const buildNumber = await getBuildNumberAndIncrement();
       </p>
       <p>
         To investigate specific heat capacity further, I decided to explore
-        sodium chloride dissolved in water. I decided to investigate it at
-        different concentrations, which led me to my research question:
+        sodium chloride dissolved in water and to investigate it at different
+        concentrations, which led me to my research question:
       </p>
       <p class="italic font-bold">
         How does the mass of sodium chloride dissolved in water affect the
@@ -160,11 +160,12 @@ const buildNumber = await getBuildNumberAndIncrement();
         is expected to be the specific heat capacity of water, <InlineMath
           latex={String.raw`4186 J \cdot kg^{−1} \cdot K^{−1}`}
         /> (Engineering Toolbox n.d.). It is difficult to predict the type of correlation
-        that exists between the two variables since no known equation accurately
-        relates the two with a constant. The domain of this graph would be from 0
-        kilograms to the saturation point for water and salt. Beyond the saturation
-        point, we may reasonably assume different behaviour since the material is
-        no longer a liquid and will have different properties.
+        that exists between the two variables since there is no known equation that
+        accurately relates the two with a constant. The domain of this graph would
+        be from 0 kilograms to the saturation point of sodium chloride dissolved
+        in water. Beyond the saturation point, we may reasonably assume different
+        behaviour since the material is no longer liquid and will have different
+        properties.
       </p>
       <h2>Diagram</h2>
       <figure>
@@ -315,6 +316,7 @@ const buildNumber = await getBuildNumberAndIncrement();
           Table 1: Controlled variables and associated actions
         </figcaption>
       </figure>
+      <div class="break-after-page"></div>
       <h2>Results</h2>
       <h3>Raw data</h3>
       <figure>
@@ -562,6 +564,7 @@ const buildNumber = await getBuildNumberAndIncrement();
           Table 4: Processed data table with calculated specific heat capacity
         </figcaption>
       </figure>
+      <div class="break-after-page"></div>
       <h3>Calculation of specific heat capacity</h3>
       <p>To calculate specific heat capacity, we will use equation 3:</p>
       <Math
@@ -575,11 +578,12 @@ const buildNumber = await getBuildNumberAndIncrement();
           latex={String.raw`c_{w}`}
         />, we are using distilled water, so we will use the textbook value for
         water's specific heat capacity, <InlineMath
-          latex={String.raw`4186 \:kg J\cdot kg^{-1}\cdot K^{-1}`}
+          latex={String.raw`4186 \: J\cdot kg^{-1}\cdot K^{-1}`}
         /> (Engineering Toolbox n.d.). We measured the temperature of the distilled
-        water before adding the sodium chloride solution and the temperature after
-        adding the sodium chloride solution, we can use these values to calculate
-        a temperature delta, <InlineMath latex={String.raw`\Delta T_{w}`} />.
+        water before and after adding the sodium chloride solution, so we can use
+        these values to calculate a temperature delta, <InlineMath
+          latex={String.raw`\Delta T_{w}`}
+        />.
       </p>
       <p>
         For the second component (in red), the mass of the solution (<InlineMath
@@ -682,6 +686,7 @@ const buildNumber = await getBuildNumberAndIncrement();
           Figure 2: Graph of sodium chloride against specific heat capacity.
         </figcaption>
       </figure>
+      <div class="break-after-page"></div>
       <h2>Analysis and Conclusion</h2>
       <p>
         Figure 2 is fitted with a linear line of best fit. No linearisation was
@@ -689,33 +694,36 @@ const buildNumber = await getBuildNumberAndIncrement();
         linear line of best fit appears to sufficiently model the data.
       </p>
       <p>
-        There are some issues with using a linear line of best fit. As discussed
-        in the hypothesis section, the domain of the line of best fit would be
-        from 0 to the maximum concentration of sodium chloride in water. The
-        maximum mass of sodium chloride dissolved in water at 25°C is 0.009 kg
-        (Engineering Toolbox n.d). When extrapolated, the graph does not predict
-        an unreasonable result for 0.009 kg of sodium chloride dissolved.
+        As discussed in the hypothesis section, the domain of the line of best
+        fit would be from 0 to the maximum concentration of sodium chloride in
+        water. The maximum mass of sodium chloride dissolved in water at 25°C is
+        0.009 kg (Engineering Toolbox n.d). When extrapolated, the line of best
+        fit predicts the specific heat capacity at the saturation point of
+        sodium chloride in water to be <InlineMath
+          latex={String.raw`2335 \: J\cdot kg^{-1}\cdot K^{-1}`}
+        />, which is not an unreasonable result. not predict an unreasonable
+        result for 0.009 kg of sodium chloride dissolved.
       </p>
       <div class="grid grid-cols-2">
         <ul>
           <li>
             Best fit gradient: <InlineMath
-              latex={String.raw`-219495 \: J\cdot kg^{-1}\cdot K^{-1}`}
+              latex={String.raw`-219495 \: J\cdot kg^{-2}\cdot K^{-1}`}
             />
           </li>
           <li>
             Min fit gradient: <InlineMath
-              latex={String.raw`-157679 \: J\cdot kg^{-1}\cdot K^{-1}`}
+              latex={String.raw`-157679 \: J\cdot kg^{-2}\cdot K^{-1}`}
             />
           </li>
           <li>
             Max fit gradient: <InlineMath
-              latex={String.raw`-319731 \: J\cdot kg^{-1}\cdot K^{-1}`}
+              latex={String.raw`-319731 \: J\cdot kg^{-2}\cdot K^{-1}`}
             />
           </li>
           <li>
             Gradient: <InlineMath
-              latex={String.raw`-219495 \pm 81026 \: J\cdot kg^{-1}\cdot K^{-1}`}
+              latex={String.raw`-219495 \pm 81026 \: J\cdot kg^{-2}\cdot K^{-1}`}
             />
           </li>
           <li>Gradient percentage uncertainty: 36.915%</li>
@@ -757,15 +765,16 @@ const buildNumber = await getBuildNumberAndIncrement();
       </p>
       <p>
         The gradient of the line of best fit has the units <InlineMath
-          latex={String.raw`J\cdot kg^{-1}\cdot K^{-1} \cdot kg^{-1}`}
+          latex={String.raw`J\cdot kg^{-2}\cdot K^{-1}`}
         />. This is the specific heat capacity per kilogram of salt.
       </p>
       <p>
         Figure 2 shows a negative, linear correlation. The points on the graph
         lie close to the trendline and the trendline passes through all the
         error bars. Some points, like the last 2, deviate further from the
-        trendline. This error does not appear to be systematic and is likely
-        random. The trendline passes through the error bars of these points, and
+        trendline. The deviation from the trendline between the last 2 points is
+        inconsistent, which is indicative of random rather than systematic
+        error. The trendline passes through the error bars of these points, and
         there are no other reasonable grounds to remove them.
       </p>
       <p>
@@ -861,7 +870,7 @@ const buildNumber = await getBuildNumberAndIncrement();
                 While not visually apparent, I noticed that between trials the
                 values of specific heat capacity would also vary with the
                 calorimeter I used. This is despite the calorimeters being
-                seemingly identical. This would add some random errors in the
+                seemingly identical. This would add some random error to the
                 data.
               </td>
               <td>
